@@ -1,7 +1,12 @@
 import React from "react";
+import PageWrapper from "../PageWrapper";
 
 function Home() {
-  return <div className="home">home!</div>;
+  return (
+    <PageWrapper>
+      <div className="home">home!</div>
+    </PageWrapper>
+  );
 }
 
 export { Home };

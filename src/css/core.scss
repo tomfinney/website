@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css?family=Cabin");
+@import "./_vars";
+
+* {
+  box-sizing: border-box;
+  font-family: $fontFamily, sans-serif;
+}
+
+body {
+  background-color: $colorWhite;
+  color: $colorWhite;
+  margin: 0;
+}

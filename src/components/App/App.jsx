@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import "../../css/normalize.scss";
+import "../../css/core.scss";
 
 import Home from "../Home";
 

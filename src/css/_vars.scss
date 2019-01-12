@@ -1,0 +1,24 @@
+$siteWidth: 1100px;
+
+$normalGutter: 16px;
+$largeGutter: 24px;
+$smallGutter: 8px;
+
+$fontFamily: "Cabin";
+
+$colorWhite: #fff;
+$colorBlack: #000;
+$colorDark: #070707;
+$colorGrey: #40434e;
+$colorPrimaryLight: #e8a1d1;
+$colorPrimaryLighter: #fdcff3;
+$colorPrimary: #de89be;
+
+$transitionSpeed: 0.22s;
+
+@mixin wrapped() {
+  > div {
+    max-width: $siteWidth;
+    margin: 0 auto;
+  }
+}
