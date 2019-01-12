@@ -1,7 +1,17 @@
 {
   "name": "WEBSITE",
   "version": "1.0.0",
-  "main": "index.js",
   "author": "tom.finney@cd2solutions.co.uk <tom.finney@cd2solutions.co.uk>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "start": "serve",
+    "build": "parcel build src/index.html"
+  },
+  "dependencies": {
+    "parcel": "^1.11.0",
+    "react": "^16.8.0-alpha.0",
+    "react-dom": "^16.8.0-alpha.0",
+    "react-router-dom": "^4.3.1"
+  }
 }
