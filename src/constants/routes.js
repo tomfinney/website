@@ -2,9 +2,9 @@ const routes = {
   home: "/",
   blogs: "/blogs",
   blogsShow: "/blogs/:handle",
-  about: "/about"
+  about: "/about",
   projects: "/projects",
-  projectsShow: "/projects/:handle",
-}
+  projectsShow: "/projects/:handle"
+};
 
-export default routes
+export default routes;

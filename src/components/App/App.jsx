@@ -1,16 +1,20 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import routes from "../../constants/routes";
+
+import Home from "../Home";
 
 import "../../css/normalize.scss";
 import "../../css/core.scss";
-
-import Home from "../Home";
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={Home} />
+        <Route path={routes.about} component={Home} exact />
+        <Route path={routes.blogs} component={Home} exact />
+        <Route path={routes.projects} component={Home} exact />
+        <Route path={routes.home} component={Home} exact />
       </Switch>
     </BrowserRouter>
   );

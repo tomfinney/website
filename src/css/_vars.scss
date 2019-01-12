@@ -1,8 +1,9 @@
 $siteWidth: 1100px;
 
 $normalGutter: 16px;
-$largeGutter: 24px;
 $smallGutter: 8px;
+$largeGutter: 24px;
+$largerGutter: 48px;
 
 $fontFamily: "Cabin";
 
@@ -10,15 +11,21 @@ $colorWhite: #fff;
 $colorBlack: #000;
 $colorDark: #070707;
 $colorGrey: #40434e;
-$colorPrimaryLight: #e8a1d1;
-$colorPrimaryLighter: #fdcff3;
-$colorPrimary: #de89be;
+$colorPrimary: #5b95ff;
+$colorPrimaryLight: #76a6ff;
+$colorPrimaryLighter: #95baff;
 
 $transitionSpeed: 0.22s;
 
-@mixin wrapped() {
+@mixin wrapped($padded: true) {
   > div {
     max-width: $siteWidth;
     margin: 0 auto;
+    position: relative;
+
+    @if $padded {
+      padding-left: $normalGutter;
+      padding-right: $normalGutter;
+    }
   }
 }

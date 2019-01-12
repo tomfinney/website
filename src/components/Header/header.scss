@@ -1,7 +1,7 @@
 @import "../../css/_vars";
 
 .header {
-  @include wrapped();
+  @include wrapped(false);
   background-color: $colorPrimary;
 
   > div {
@@ -11,6 +11,9 @@
 
   h2 {
     margin: 0;
+    position: absolute;
+    bottom: $largeGutter;
+    left: $normalGutter;
   }
 }
 
@@ -19,7 +22,7 @@
   text-align: right;
 
   a {
-    padding: $largeGutter;
+    padding: $largerGutter $largeGutter $largeGutter;
     background-color: $colorPrimaryLight;
     transition: $transitionSpeed;
     color: $colorWhite;
@@ -27,6 +30,13 @@
     display: inline-block;
     vertical-align: middle;
     text-align: center;
+    border-bottom: 5px solid;
+    border-bottom-color: transparent;
+  }
+
+  .active {
+    text-decoration: underline;
+    border-bottom-color: $colorPrimaryLighter;
   }
 
   a * {
@@ -38,13 +48,14 @@
     border-left: 1px solid $colorPrimary;
   }
 
+  a:hover {
+    background-color: $colorPrimaryLighter;
+    border-bottom-color: $colorPrimaryLighter;
+  }
+
   svg {
     margin-right: $smallGutter;
     width: $largeGutter;
     height: $largeGutter;
-  }
-
-  a:hover {
-    background-color: $colorPrimaryLighter;
   }
 }
