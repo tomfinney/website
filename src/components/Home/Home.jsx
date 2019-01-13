@@ -1,28 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PageWrapper from "../PageWrapper";
+import { retrieveResourceContent } from "../../utils/markdown";
+import routes from "../../constants/routes";
 
 import "./home.scss";
 
-const teasers = [
-  {
-    title: "A title about something",
-    summary: "Something something something something",
-    to: "/"
-  },
-  {
-    title: "A title about something",
-    summary: "Something something something something",
-    to: "/"
-  },
-  {
-    title: "A title about something",
-    summary: "Something something something something",
-    to: "/"
-  }
-];
-
 function Home() {
+  const blogs = retrieveResourceContent("blogs");
   return (
     <PageWrapper>
       <div className="home">
@@ -30,14 +15,17 @@ function Home() {
           <div className="contentTeaserPanel">
             <h2>Blogs</h2>
             <div className="contentTeasers">
-              {teasers.map(teaser => (
+              {blogs.map(blog => (
                 <div className="contentTeaser">
                   <div>
                     <div className="contentTeaser__img" />
                     <div className="contentTeaser__content">
-                      <h3>{teaser.title}</h3>
-                      <p>{teaser.summary}</p>
-                      <Link className="btn" to={teaser.to}>
+                      <h3>{blog.meta.title}</h3>
+                      <p>{blog.meta.summary}</p>
+                      <Link
+                        className="btn"
+                        to={`${routes.blogs}${blog.meta.handle}`}
+                      >
                         Read More
                       </Link>
                     </div>

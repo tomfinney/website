@@ -16,6 +16,7 @@ function App() {
         <Route path={routes.blogs} component={Blogs} exact />
         <Route path={routes.projects} component={Home} exact />
         <Route path={routes.home} component={Home} exact />
+        <Route path="/" component={Home} />
       </Switch>
     </BrowserRouter>
   );

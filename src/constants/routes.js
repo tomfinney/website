@@ -1,9 +1,9 @@
 const routes = {
   home: "/",
-  blogs: "/blogs",
+  blogs: "/blogs/",
   blogsShow: "/blogs/:handle",
   about: "/about",
-  projects: "/projects",
+  projects: "/projects/",
   projectsShow: "/projects/:handle"
 };
 
