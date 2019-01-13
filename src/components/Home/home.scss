@@ -1,0 +1,45 @@
+@import "../../css/_vars";
+
+.home {
+  @include wrapped();
+}
+
+.contentTeaserPanel {
+  padding: $largeGutter 0;
+
+  h2 {
+    margin: 0 0 $largeGutter;
+    color: $colorPrimary;
+  }
+}
+
+.contentTeasers {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin-left: -#{$largeGutter};
+}
+
+.contentTeaser {
+  margin-bottom: $largeGutter;
+  background-color: $colorWhite;
+  margin-left: $largeGutter;
+  width: calc(33.33% - #{$largeGutter});
+
+  &__img {
+    height: 200px;
+    background-color: $colorGrey;
+  }
+
+  &__content {
+    padding: $largeGutter;
+  }
+
+  h3 {
+    margin: 0 0 $largeGutter;
+  }
+
+  p {
+    margin: 0 0 $largeGutter;
+  }
+}

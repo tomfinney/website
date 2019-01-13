@@ -3,6 +3,7 @@
 .header {
   @include wrapped(false);
   background-color: $colorPrimary;
+  color: $colorWhite;
 
   > div {
     display: flex;
@@ -11,9 +12,8 @@
 
   h2 {
     margin: 0;
-    position: absolute;
-    bottom: $largeGutter;
-    left: $normalGutter;
+    padding: 0 0 0 $normalGutter;
+    user-select: none;
   }
 }
 
@@ -22,7 +22,7 @@
   text-align: right;
 
   a {
-    padding: $largerGutter $largeGutter $largeGutter;
+    padding: $smallGutter $largeGutter;
     background-color: $colorPrimaryLight;
     transition: $transitionSpeed;
     color: $colorWhite;
@@ -30,6 +30,7 @@
     display: inline-block;
     vertical-align: middle;
     text-align: center;
+    border-top: 5px solid transparent;
     border-bottom: 5px solid;
     border-bottom-color: transparent;
   }

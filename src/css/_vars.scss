@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans");
+
 $siteWidth: 1100px;
 
 $normalGutter: 16px;
@@ -5,15 +7,17 @@ $smallGutter: 8px;
 $largeGutter: 24px;
 $largerGutter: 48px;
 
-$fontFamily: "Cabin";
+$fontFamily: "IBM Plex Sans";
 
 $colorWhite: #fff;
 $colorBlack: #000;
 $colorDark: #070707;
 $colorGrey: #40434e;
+$colorGreyLight: #ebeff5;
 $colorPrimary: #5b95ff;
 $colorPrimaryLight: #76a6ff;
 $colorPrimaryLighter: #95baff;
+$colorText: #070707;
 
 $transitionSpeed: 0.22s;
 
@@ -24,8 +28,7 @@ $transitionSpeed: 0.22s;
     position: relative;
 
     @if $padded {
-      padding-left: $normalGutter;
-      padding-right: $normalGutter;
+      padding: $normalGutter;
     }
   }
 }
