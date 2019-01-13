@@ -2,8 +2,8 @@
 
 .header {
   @include wrapped(false);
-  background-color: $colorPrimary;
-  color: $colorWhite;
+  background-color: $colorWhite;
+  color: $colorText;
 
   > div {
     display: flex;
@@ -23,9 +23,9 @@
 
   a {
     padding: $smallGutter $largeGutter;
-    background-color: $colorPrimaryLight;
+    background-color: $colorWhite;
     transition: $transitionSpeed;
-    color: $colorWhite;
+    color: $colorText;
     text-decoration: none;
     display: inline-block;
     vertical-align: middle;
@@ -37,7 +37,7 @@
 
   .active {
     text-decoration: underline;
-    border-bottom-color: $colorPrimaryLighter;
+    border-bottom-color: $colorDark;
   }
 
   a * {
@@ -45,13 +45,8 @@
     vertical-align: middle;
   }
 
-  a + a {
-    border-left: 1px solid $colorPrimary;
-  }
-
   a:hover {
-    background-color: $colorPrimaryLighter;
-    border-bottom-color: $colorPrimaryLighter;
+    border-bottom-color: $colorDark;
   }
 
   svg {
