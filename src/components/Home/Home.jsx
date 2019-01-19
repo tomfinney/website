@@ -5,9 +5,11 @@ import { retrieveResourceContent } from "../../utils/markdown";
 import routes from "../../constants/routes";
 
 import "./home.scss";
+import ContentTeaser from "../ContentTeaser";
 
 function Home() {
   const blogs = retrieveResourceContent("blogs");
+  const projects = retrieveResourceContent("projects");
   return (
     <PageWrapper>
       <div className="home">
@@ -16,21 +18,15 @@ function Home() {
             <h2>Blogs</h2>
             <div className="contentTeasers">
               {blogs.map(blog => (
-                <div className="contentTeaser">
-                  <div>
-                    <div className="contentTeaser__img" />
-                    <div className="contentTeaser__content">
-                      <h3>{blog.meta.title}</h3>
-                      <p>{blog.meta.summary}</p>
-                      <Link
-                        className="btn"
-                        to={`${routes.blogs}${blog.meta.handle}`}
-                      >
-                        Read More
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+                <ContentTeaser content={blog} contentType="blogs" />
+              ))}
+            </div>
+          </div>
+          <div className="contentTeaserPanel">
+            <h2>Projects</h2>
+            <div className="contentTeasers">
+              {projects.map(project => (
+                <ContentTeaser content={project} contentType="projects" />
               ))}
             </div>
           </div>

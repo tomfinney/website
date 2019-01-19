@@ -1,9 +1,11 @@
 import yaml from "js-yaml";
 
 import blogs from "../constants/blogs";
+import projects from "../constants/projects";
 
 const dirMap = {
-  blogs
+  blogs,
+  projects
 };
 
 export function processMarkdown(mdContent) {
