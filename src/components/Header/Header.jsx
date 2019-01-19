@@ -19,7 +19,7 @@ function Header() {
         <h2>tomjf.com</h2>
         <nav className="navLinks">
           {links.map(link => (
-            <NavLink key={link.to} to={link.to} exact>
+            <NavLink key={link.to} to={link.to} exact={link.to === routes.home}>
               <link.Icon />
               <span>{link.text}</span>
             </NavLink>
