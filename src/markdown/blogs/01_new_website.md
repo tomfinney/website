@@ -1,7 +1,7 @@
 ---
 title: New website (first website)
 date: "01-13-2019"
-summary: This is a post about the website.
+summary: This is a post about why the website exists.
 handle: new-website
 ---
 

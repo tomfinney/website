@@ -4,6 +4,7 @@ import routes from "../../constants/routes";
 
 import Home from "../Home/Home";
 import Blogs from "../Blogs/Blogs";
+import About from "../About/About";
 import ContentShow from "../ContentShow/ContentShow";
 
 import ContentProvider from "../ContentProvider/ContentProvider";
@@ -16,7 +17,7 @@ export default function App() {
     <ContentProvider>
       <BrowserRouter>
         <Switch>
-          <Route path={routes.about} component={Home} exact />
+          <Route path={routes.about} component={About} exact />
           <Route path={routes.blogsShow} component={ContentShow} exact />
           <Route path={routes.blogs} component={Blogs} exact />
           <Route path={routes.projects} component={Home} exact />

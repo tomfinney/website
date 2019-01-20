@@ -1,7 +1,7 @@
 ---
 title: New website (first website)
 date: "01-13-2019"
-summary: This is a post describing the website.
+summary: This is a post describing the behind the scenes of the website.
 handle: new-website
 ---
 
