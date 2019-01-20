@@ -4,7 +4,7 @@ import routes from "../../constants/routes";
 
 import "./contentTeaser.scss";
 
-function ContentTeaser({ content, contentType }) {
+export default function ContentTeaser({ content, contentType }) {
   return (
     <div className="contentTeaser">
       <div>
@@ -23,5 +23,3 @@ function ContentTeaser({ content, contentType }) {
     </div>
   );
 }
-
-export { ContentTeaser };

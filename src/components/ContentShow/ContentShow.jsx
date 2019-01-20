@@ -1,33 +1,34 @@
 import React, { useEffect, useState, useRef } from "react";
-import { retrieveResourceContent } from "../../utils/markdown";
-import { BlogsShow } from "../BlogsShow/BlogsShow";
-
-const contentDataMap = {
-  blogs: retrieveResourceContent("blogs")
-};
+import BlogsShow from "../BlogsShow/BlogsShow";
+import useContent from "../ContentProvider/useContent";
 
 const contentComponentMap = {
   blogs: BlogsShow
 };
 
-function ContentShow({ match }) {
+export default function ContentShow({ match }) {
+  const contents = useContent();
   const [content, setContent] = useState(null);
   const mounted = useRef(false);
   const handle = match.params.handle;
-  const contentType = match.path.split("/").filter(Boolean)[0];
-  const contentData = contentDataMap[contentType];
-  const ContentComponent = contentComponentMap[contentType];
+  const type = match.path.split("/").filter(Boolean)[0];
+  const contentObjects = contents[type];
+  const ContentComponent = contentComponentMap[type];
 
   useEffect(
     function() {
-      setContent(contentData.find(content => content.meta.handle === handle));
+      setContent(
+        Object.values(contentObjects).find(
+          contentObject => contentObject.meta.handle === handle
+        )
+      );
       mounted.current = true;
 
       return function() {
         mounted.current = false;
       };
     },
-    [handle, contentType]
+    [handle, type]
   );
 
   return (
@@ -41,5 +42,3 @@ function ContentShow({ match }) {
     />
   );
 }
-
-export { ContentShow };

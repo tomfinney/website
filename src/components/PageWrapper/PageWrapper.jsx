@@ -1,9 +1,9 @@
 import React from "react";
-import Header from "../Header";
+import Header from "../Header/Header";
 
 import "./pageWrapper.scss";
 
-function PageWrapper({ children }) {
+export default function PageWrapper({ children }) {
   return (
     <div className="pageWrapper">
       <Header />
@@ -11,5 +11,3 @@ function PageWrapper({ children }) {
     </div>
   );
 }
-
-export { PageWrapper };

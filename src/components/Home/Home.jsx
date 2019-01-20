@@ -1,15 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import PageWrapper from "../PageWrapper";
-import { retrieveResourceContent } from "../../utils/markdown";
-import routes from "../../constants/routes";
+import PageWrapper from "../PageWrapper/PageWrapper";
 
 import "./home.scss";
-import ContentTeaser from "../ContentTeaser";
+import ContentTeaser from "../ContentTeaser/ContentTeaser";
+import useContent from "../ContentProvider/useContent";
 
-function Home() {
-  const blogs = retrieveResourceContent("blogs");
-  const projects = retrieveResourceContent("projects");
+export default function Home() {
+  const { blogs, projects } = useContent();
+
   return (
     <PageWrapper>
       <div className="home">
@@ -17,7 +15,7 @@ function Home() {
           <div className="contentTeaserPanel">
             <h2>Blogs</h2>
             <div className="contentTeasers">
-              {blogs.map(blog => (
+              {Object.values(blogs).map(blog => (
                 <ContentTeaser content={blog} contentType="blogs" />
               ))}
             </div>
@@ -25,7 +23,7 @@ function Home() {
           <div className="contentTeaserPanel">
             <h2>Projects</h2>
             <div className="contentTeasers">
-              {projects.map(project => (
+              {Object.values(projects).map(project => (
                 <ContentTeaser content={project} contentType="projects" />
               ))}
             </div>
@@ -35,5 +33,3 @@ function Home() {
     </PageWrapper>
   );
 }
-
-export { Home };

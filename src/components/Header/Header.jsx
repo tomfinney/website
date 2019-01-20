@@ -12,7 +12,7 @@ const links = [
   { to: routes.projects, Icon: MdWork, text: "Projects" }
 ];
 
-function Header() {
+export default function Header() {
   return (
     <header className="header">
       <div>
@@ -31,5 +31,3 @@ function Header() {
     </header>
   );
 }
-
-export { Header };

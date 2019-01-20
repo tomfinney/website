@@ -1,10 +1,10 @@
 import React from "react";
-import PageWrapper from "../PageWrapper";
+import PageWrapper from "../PageWrapper/PageWrapper";
 import ReactMarkdown from "react-markdown";
 
 import "./blogsShow.scss";
 
-function BlogsShow({ loading, noContentFound, content }) {
+export default function BlogsShow({ loading, noContentFound, content }) {
   return (
     <PageWrapper>
       <div className="blogsShow">
@@ -17,5 +17,3 @@ function BlogsShow({ loading, noContentFound, content }) {
     </PageWrapper>
   );
 }
-
-export { BlogsShow };
