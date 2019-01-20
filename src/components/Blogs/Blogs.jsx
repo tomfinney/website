@@ -6,7 +6,7 @@ import ContentTeaser from "../ContentTeaser/ContentTeaser";
 import useContent from "../ContentProvider/useContent";
 
 export default function Blogs() {
-  const { blogs, projects } = useContent();
+  const { blogs } = useContent();
 
   return (
     <PageWrapper>
