@@ -24,7 +24,18 @@
   margin-bottom: $largeGutter;
   background-color: $colorWhite;
   margin-left: $largeGutter;
-  width: calc(33.33% - #{$largeGutter});
+
+  @media (min-width: 900px) {
+    width: calc(33.33% - #{$largeGutter});
+  }
+
+  @media (max-width: 899px) and (min-width: 500px) {
+    width: calc(50% - #{$largeGutter});
+  }
+
+  @media (max-width: 499px) {
+    width: calc(100% - #{$largeGutter});
+  }
 
   &__img {
     height: 200px;

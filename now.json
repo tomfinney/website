@@ -1,5 +1,14 @@
 {
   "version": 2,
   "name": "toms website",
-  "builds": [{ "src": "package.json", "use": "@now/static-build" }]
+  "builds": [{ "src": "package.json", "use": "@now/static-build" }],
+  "type": "static",
+  "static": {
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
 }

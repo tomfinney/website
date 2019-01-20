@@ -16,7 +16,11 @@ export default function Blogs() {
             <h2>All Blogs</h2>
             <div className="contentTeasers">
               {Object.values(blogs).map(blog => (
-                <ContentTeaser content={blog} contentType="blogs" />
+                <ContentTeaser
+                  key={blog.meta.handle}
+                  content={blog}
+                  contentType="blogs"
+                />
               ))}
             </div>
           </div>

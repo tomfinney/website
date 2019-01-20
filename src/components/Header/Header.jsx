@@ -17,7 +17,7 @@ export default function Header() {
     <header className="header">
       <div>
         <h2>
-          <Link to={routes.home}>tomjf.com</Link>
+          <Link to={routes.home}>tomfinney.com</Link>
         </h2>
         <nav className="navLinks">
           {links.map(link => (

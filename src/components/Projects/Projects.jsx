@@ -16,7 +16,11 @@ export default function Projects() {
             <h2>All Projects</h2>
             <div className="contentTeasers">
               {Object.values(projects).map(project => (
-                <ContentTeaser content={project} contentType="projects" />
+                <ContentTeaser
+                  key={project.meta.handle}
+                  content={project}
+                  contentType="projects"
+                />
               ))}
             </div>
           </div>

@@ -16,7 +16,11 @@ export default function Home() {
             <h2>Blogs</h2>
             <div className="contentTeasers">
               {Object.values(blogs).map(blog => (
-                <ContentTeaser content={blog} contentType="blogs" />
+                <ContentTeaser
+                  key={blog.meta.handle}
+                  content={blog}
+                  contentType="blogs"
+                />
               ))}
             </div>
           </div>
@@ -24,7 +28,11 @@ export default function Home() {
             <h2>Projects</h2>
             <div className="contentTeasers">
               {Object.values(projects).map(project => (
-                <ContentTeaser content={project} contentType="projects" />
+                <ContentTeaser
+                  key={project.meta.handle}
+                  content={project}
+                  contentType="projects"
+                />
               ))}
             </div>
           </div>
