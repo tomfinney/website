@@ -29,6 +29,8 @@
   &__img {
     height: 200px;
     background-color: $colorGrey;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   &__content {

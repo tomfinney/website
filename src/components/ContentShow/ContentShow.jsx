@@ -28,7 +28,7 @@ export default function ContentShow({ match }) {
         mounted.current = false;
       };
     },
-    [handle, type]
+    [handle, type, contents]
   );
 
   return (
