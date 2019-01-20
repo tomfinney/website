@@ -1,14 +1,7 @@
 {
   "version": 2,
   "name": "toms website",
+  "alias": ["tomfinney.com"],
   "builds": [{ "src": "package.json", "use": "@now/static-build" }],
-  "type": "static",
-  "static": {
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  }
+  "routes": [{ "src": "/(.*)", "dest": "/index.html" }]
 }

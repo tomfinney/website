@@ -5,7 +5,6 @@
   "license": "MIT",
   "scripts": {
     "dev": "parcel src/index.html",
-    "start": "serve",
     "build": "parcel build src/index.html",
     "now-build": "parcel build src/index.html"
   },
