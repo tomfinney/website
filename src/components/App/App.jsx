@@ -14,6 +14,7 @@ import "../../css/normalize.scss";
 import "../../css/core.scss";
 
 export default function App() {
+  document.title = "tom's website";
   return (
     <ContentProvider>
       <BrowserRouter>
