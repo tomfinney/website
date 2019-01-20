@@ -1,0 +1,63 @@
+@import "../../css/_vars";
+
+.header {
+  @include wrapped(false);
+  background-color: $colorWhite;
+  color: $colorText;
+
+  > div {
+    display: flex;
+    align-items: center;
+  }
+
+  h2 {
+    margin: 0;
+    padding: 0 0 0 $normalGutter;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  h2 a {
+    text-decoration: none;
+    color: $colorText;
+  }
+}
+
+.navLinks {
+  flex: 1;
+  text-align: right;
+
+  a {
+    padding: $smallGutter $largeGutter;
+    background-color: $colorWhite;
+    transition: $transitionSpeed;
+    color: $colorText;
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid;
+    border-bottom-color: transparent;
+  }
+
+  .active {
+    text-decoration: underline;
+    border-bottom-color: $colorDark;
+  }
+
+  a * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  a:hover {
+    border-bottom-color: $colorDark;
+  }
+
+  svg {
+    margin-right: $smallGutter;
+    width: $largeGutter;
+    height: $largeGutter;
+  }
+}
