@@ -1,9 +1,11 @@
 import React, { useEffect, useState, useRef } from "react";
 import BlogsShow from "../BlogsShow/BlogsShow";
+import ProjectsShow from "../ProjectsShow/ProjectsShow";
 import useContent from "../ContentProvider/useContent";
 
 const contentComponentMap = {
-  blogs: BlogsShow
+  blogs: BlogsShow,
+  projects: ProjectsShow
 };
 
 export default function ContentShow({ match }) {

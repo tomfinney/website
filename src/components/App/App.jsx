@@ -4,6 +4,7 @@ import routes from "../../constants/routes";
 
 import Home from "../Home/Home";
 import Blogs from "../Blogs/Blogs";
+import Projects from "../Projects/Projects";
 import About from "../About/About";
 import ContentShow from "../ContentShow/ContentShow";
 
@@ -20,7 +21,8 @@ export default function App() {
           <Route path={routes.about} component={About} exact />
           <Route path={routes.blogsShow} component={ContentShow} exact />
           <Route path={routes.blogs} component={Blogs} exact />
-          <Route path={routes.projects} component={Home} exact />
+          <Route path={routes.projectsShow} component={ContentShow} exact />
+          <Route path={routes.projects} component={Projects} exact />
           <Route path={routes.home} component={Home} exact />
           <Route path="/" component={Home} />
         </Switch>
