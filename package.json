@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "parcel src/index.html",
     "start": "serve",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html",
+    "now-build": "parcel build src/index.html"
   },
   "dependencies": {
     "js-yaml": "^3.12.1",
