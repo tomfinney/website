@@ -3,19 +3,3 @@
 .home {
   @include wrapped();
 }
-
-.contentTeaserPanel {
-  padding: $largeGutter 0;
-
-  h2 {
-    margin: 0 0 $largeGutter;
-    color: $colorText;
-  }
-}
-
-.contentTeasers {
-  display: flex;
-  align-items: stretch;
-  flex-wrap: wrap;
-  margin-left: -#{$largeGutter};
-}

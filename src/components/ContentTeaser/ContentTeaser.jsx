@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import routes from "../../constants/routes";
 import cameraSvg from "../../assets/images/camera.svg";
 
-import "./contentTeaser.scss";
-
 export default function ContentTeaser({ content, contentType }) {
   return (
     <div className="contentTeaser">

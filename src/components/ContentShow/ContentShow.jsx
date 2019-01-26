@@ -61,10 +61,8 @@ export default function ContentShow({ match }) {
                     {contentObj.meta.title}
                   </Link>
                 ))}
-                {sideMenuContents.length < 1 && (
-                  <p>Sorry, no other {type} :(</p>
-                )}
               </p>
+              {sideMenuContents.length < 1 && <p>Sorry, no other {type} :(</p>}
             </aside>
           </div>
         </div>
