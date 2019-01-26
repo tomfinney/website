@@ -33,9 +33,11 @@ img {
 }
 
 .articleContainer {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  @media (min-width: 900px) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
 }
 
 .articleText {
@@ -43,5 +45,14 @@ img {
 }
 
 .articleAside {
-  width: 250px;
+  @media (min-width: 900px) {
+    margin-left: $largeGutter;
+    width: 250px;
+  }
+}
+
+.articleAsideLinks {
+  a {
+    display: block;
+  }
 }

@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import useContent from "../ContentProvider/useContent";
 import PageWrapper from "../PageWrapper/PageWrapper";
 import ReactMarkdown from "react-markdown";
@@ -12,6 +13,9 @@ export default function ContentShow({ match }) {
   const handle = match.params.handle;
   const type = match.path.split("/").filter(Boolean)[0];
   const contentObjects = contents[type];
+  const sideMenuContents = Object.values(contents[type]).filter(
+    contentObj => contentObj.meta.handle !== handle
+  );
 
   useEffect(
     function() {
@@ -38,11 +42,31 @@ export default function ContentShow({ match }) {
     <PageWrapper>
       <div className="contentsShow">
         <div>
-          {!mounted.current && !content && <p>Loading...</p>}
-          {mounted.current && !content && (
-            <p>No content found for handle: {handle}</p>
-          )}
-          {content && <ReactMarkdown source={content.content} />}
+          <div className="articleContainer">
+            <article className="articleText">
+              {!mounted.current && !content && <p>Loading...</p>}
+              {mounted.current && !content && (
+                <p>No content found for handle: {handle}</p>
+              )}
+              {content && <ReactMarkdown source={content.content} />}
+            </article>
+            <aside className="articleAside">
+              <h2>More {type}</h2>
+              <p className="articleAsideLinks">
+                {sideMenuContents.map(contentObj => (
+                  <Link
+                    to={`/${type}/${contentObj.meta.handle}`}
+                    key={contentObj.meta.handle}
+                  >
+                    {contentObj.meta.title}
+                  </Link>
+                ))}
+                {sideMenuContents.length < 1 && (
+                  <p>Sorry, no other {type} :(</p>
+                )}
+              </p>
+            </aside>
+          </div>
         </div>
       </div>
     </PageWrapper>
