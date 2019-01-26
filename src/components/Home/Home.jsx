@@ -5,17 +5,17 @@ import "./home.scss";
 const ContentTeaser = React.lazy(() =>
   import("../ContentTeaser/ContentTeaser")
 );
-import useContent from "../ContentProvider/useContent";
+import useContents from "../ContentProvider/useContents";
 
 export default function Home() {
-  const { blogs, projects } = useContent();
+  const { blogs, projects } = useContents();
 
   return (
     <PageWrapper>
       <div className="home">
         <div>
           <div className="contentTeaserPanel">
-            <h2>Recent Blogs</h2>
+            <h2>Recent blogs</h2>
             <div className="contentTeasers">
               <React.Suspense fallback="...">
                 {Object.values(blogs).map(blog => (
@@ -29,7 +29,7 @@ export default function Home() {
             </div>
           </div>
           <div className="contentTeaserPanel">
-            <h2>Recent Projects</h2>
+            <h2>Recent projects</h2>
             <div className="contentTeasers">
               <React.Suspense fallback="...">
                 {Object.values(projects).map(project => (

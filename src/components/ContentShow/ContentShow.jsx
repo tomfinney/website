@@ -1,42 +1,19 @@
-import React, { useEffect, useState, useRef } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import useContent from "../ContentProvider/useContent";
 import PageWrapper from "../PageWrapper/PageWrapper";
 import Markdown from "../Markdown/Markdown";
 
 import "./contentsShow.scss";
+import useContentShow from "./useContentShow";
 
 export default function ContentShow({ match }) {
-  const contents = useContent();
-  const [content, setContent] = useState(null);
-  const mounted = useRef(false);
-  const handle = match.params.handle;
-  const type = match.path.split("/").filter(Boolean)[0];
-  const contentObjects = contents[type];
-  const sideMenuContents = Object.values(contents[type]).filter(
-    contentObj => contentObj.meta.handle !== handle
-  );
-
-  useEffect(
-    function() {
-      const loadedContent = Object.values(contentObjects).find(
-        contentObject => contentObject.meta.handle === handle
-      );
-
-      if (loadedContent) {
-        document.title = `${loadedContent.meta.title} | tom's website`;
-      }
-
-      mounted.current = true;
-      setContent(loadedContent);
-
-      return function() {
-        document.title = "tom's website";
-        mounted.current = false;
-      };
-    },
-    [handle, type, contents]
-  );
+  const {
+    loading,
+    noContentFound,
+    content,
+    sideMenuContents,
+    type
+  } = useContentShow(match);
 
   return (
     <PageWrapper>
@@ -44,10 +21,8 @@ export default function ContentShow({ match }) {
         <div>
           <div className="articleContainer">
             <article className="articleText">
-              {!mounted.current && !content && <p>Loading...</p>}
-              {mounted.current && !content && (
-                <p>No content found for handle: {handle}</p>
-              )}
+              {loading && <p>Loading...</p>}
+              {noContentFound && <p>No content found for handle: {handle}</p>}
               {content && <Markdown content={content.content} />}
             </article>
             <aside className="articleAside">

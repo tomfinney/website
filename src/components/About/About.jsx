@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PageWrapper from "../PageWrapper/PageWrapper";
-import useContent from "../ContentProvider/useContent";
+import useContents from "../ContentProvider/useContents";
 import aboutMd from "../../markdown/about.md";
 import meJpg from "../../assets/images/me.jpg";
 
@@ -8,7 +8,7 @@ import "./about.scss";
 import Markdown from "../Markdown/Markdown";
 
 export default function About() {
-  const { processMarkdown, fetchFile } = useContent();
+  const { processMarkdown, fetchFile } = useContents();
   const [about, setAbout] = useState({});
 
   useEffect(function() {
