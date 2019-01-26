@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import PageWrapper from "../PageWrapper/PageWrapper";
 import useContent from "../ContentProvider/useContent";
 import aboutMd from "../../markdown/about.md";
-import ReactMarkdown from "react-markdown";
 import meJpg from "../../assets/images/me.jpg";
 
 import "./about.scss";
+import Markdown from "../Markdown/Markdown";
 
 export default function About() {
   const { processMarkdown, fetchFile } = useContent();
@@ -23,7 +23,7 @@ export default function About() {
         <div>
           <div className="articleContainer">
             <article className="articleText">
-              {about.content && <ReactMarkdown source={about.content} />}
+              {about.content && <Markdown content={about.content} />}
             </article>
             <aside className="articleAside">
               <br />

@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import useContent from "../ContentProvider/useContent";
 import PageWrapper from "../PageWrapper/PageWrapper";
-import ReactMarkdown from "react-markdown";
+import Markdown from "../Markdown/Markdown";
 
 import "./contentsShow.scss";
 
@@ -48,7 +48,7 @@ export default function ContentShow({ match }) {
               {mounted.current && !content && (
                 <p>No content found for handle: {handle}</p>
               )}
-              {content && <ReactMarkdown source={content.content} />}
+              {content && <Markdown content={content.content} />}
             </article>
             <aside className="articleAside">
               <h2>More {type}</h2>
