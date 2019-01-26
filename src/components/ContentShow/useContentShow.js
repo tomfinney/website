@@ -38,6 +38,7 @@ export default function useContentShow(match) {
     noContentFound: mounted.current && !content,
     content,
     sideMenuContents,
-    type
+    type,
+    handle
   };
 }

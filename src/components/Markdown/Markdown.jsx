@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 
 export default function Markdown({ content }) {
-  function RouterLink(props) {
-    return props.href.match(/((^(https?:)?\/\/)|(^(mailto:))|(^(tel:)))/) ? (
-      <a href={props.href} target="_blank">
-        {props.children}
+  function RouterLink({ href, children }) {
+    return href.match(/((^(https?:)?\/\/)|(^(mailto:))|(^(tel:)))/) ? (
+      <a href={href} target="_blank">
+        {children}
       </a>
     ) : (
-      <Link to={props.href}>{props.children}</Link>
+      <Link to={href}>{children}</Link>
     );
   }
 

@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import yaml from "js-yaml";
-
 import blogs from "../../markdown/blogs/*.md";
 import projects from "../../markdown/projects/*.md";
 
@@ -33,8 +31,10 @@ export default function ContentProvider({ children }) {
     Object.entries(contentMap[type]).map(([name, path]) => {
       fetchFile(path).then(text => {
         const newContents = contents;
-        newContents[type][name] = processMarkdown(text);
-        setContents(newContents);
+        processMarkdown(text).then(processed => {
+          newContents[type][name] = processed;
+          setContents(newContents);
+        });
       });
     });
   }
@@ -45,7 +45,10 @@ export default function ContentProvider({ children }) {
 
   function processMarkdown(text) {
     const [meta, content] = text.split("---").filter(Boolean);
-    return { meta: yaml.load(meta), content };
+    return import("js-yaml").then(yaml => ({
+      meta: yaml.load(meta),
+      content
+    }));
   }
 
   return (
