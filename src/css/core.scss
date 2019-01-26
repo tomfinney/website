@@ -18,6 +18,10 @@ img {
   max-width: 100%;
 }
 
+.circle {
+  border-radius: 50%;
+}
+
 .btn {
   padding: $smallGutter $largeGutter;
   color: $colorText;

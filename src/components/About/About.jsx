@@ -3,6 +3,7 @@ import PageWrapper from "../PageWrapper/PageWrapper";
 import useContent from "../ContentProvider/useContent";
 import aboutMd from "../../markdown/about.md";
 import ReactMarkdown from "react-markdown";
+import meJpg from "../../assets/images/me.jpg";
 
 import "./about.scss";
 
@@ -24,6 +25,10 @@ export default function About() {
             <article className="articleText">
               {about.content && <ReactMarkdown source={about.content} />}
             </article>
+            <aside className="articleAside">
+              <br />
+              <img className="circle" src={meJpg} alt="picture of tom" />
+            </aside>
           </div>
         </div>
       </div>
