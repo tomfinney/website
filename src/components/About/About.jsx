@@ -3,9 +3,9 @@ import PageWrapper from "../PageWrapper/PageWrapper";
 import useContents from "../ContentProvider/useContents";
 import aboutMd from "../../markdown/about.md";
 import meJpg from "../../assets/images/me.jpg";
+import Markdown from "../Markdown/Markdown";
 
 import "./about.scss";
-import Markdown from "../Markdown/Markdown";
 
 export default function About() {
   const { processMarkdown, fetchFile } = useContents();

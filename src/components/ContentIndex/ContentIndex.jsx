@@ -2,10 +2,12 @@ import React from "react";
 import PageWrapper from "../PageWrapper/PageWrapper";
 
 import "./contentsIndex.scss";
-import ContentTeaser from "../ContentTeaser/ContentTeaser";
+const ContentTeaser = React.lazy(() =>
+  import("../ContentTeaser/ContentTeaser")
+);
 import useContents from "../ContentProvider/useContents";
 
-export default function Blogs({ match }) {
+export default function ContentIndex({ match }) {
   const type = match.path.split("/").filter(Boolean)[0];
   const contents = useContents();
 
@@ -16,13 +18,15 @@ export default function Blogs({ match }) {
           <div className="contentTeaserPanel">
             <h2>All {type}</h2>
             <div className="contentTeasers">
-              {Object.values(contents[type]).map(content => (
-                <ContentTeaser
-                  key={content.meta.handle}
-                  content={content}
-                  contentType={type}
-                />
-              ))}
+              <React.Suspense fallback="...">
+                {Object.values(contents[type]).map(content => (
+                  <ContentTeaser
+                    key={content.meta.handle}
+                    content={content}
+                    contentType={type}
+                  />
+                ))}
+              </React.Suspense>
             </div>
           </div>
         </div>
