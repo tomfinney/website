@@ -1,12 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
-import BlogsShow from "../BlogsShow/BlogsShow";
-import ProjectsShow from "../ProjectsShow/ProjectsShow";
 import useContent from "../ContentProvider/useContent";
+import PageWrapper from "../PageWrapper/PageWrapper";
+import ReactMarkdown from "react-markdown";
 
-const contentComponentMap = {
-  blogs: BlogsShow,
-  projects: ProjectsShow
-};
+import "./contentsShow.scss";
 
 export default function ContentShow({ match }) {
   const contents = useContent();
@@ -15,7 +12,6 @@ export default function ContentShow({ match }) {
   const handle = match.params.handle;
   const type = match.path.split("/").filter(Boolean)[0];
   const contentObjects = contents[type];
-  const ContentComponent = contentComponentMap[type];
 
   useEffect(
     function() {
@@ -39,13 +35,16 @@ export default function ContentShow({ match }) {
   );
 
   return (
-    <ContentComponent
-      loading={!mounted.current && !content ? <p>Loading...</p> : ""}
-      noContentFound={
-        mounted.current &&
-        !content && <p>No content found for handle: {handle}</p>
-      }
-      content={content}
-    />
+    <PageWrapper>
+      <div className="contentsShow">
+        <div>
+          {!mounted.current && !content && <p>Loading...</p>}
+          {mounted.current && !content && (
+            <p>No content found for handle: {handle}</p>
+          )}
+          {content && <ReactMarkdown source={content.content} />}
+        </div>
+      </div>
+    </PageWrapper>
   );
 }

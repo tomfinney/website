@@ -9,7 +9,12 @@ const contentMap = {
   projects
 };
 
-const defaultValue = { blogs: {}, projects: {} };
+const defaultValue = {
+  blogs: {},
+  projects: {},
+  processMarkdown: () => {},
+  fetchFile: () => {}
+};
 
 export const ContentContext = React.createContext(defaultValue);
 
@@ -26,14 +31,16 @@ export default function ContentProvider({ children }) {
 
   function fetchContent(type) {
     Object.entries(contentMap[type]).map(([name, path]) => {
-      fetch(path)
-        .then(response => response.text())
-        .then(text => {
-          const newContents = contents;
-          newContents[type][name] = processMarkdown(text);
-          setContents(newContents);
-        });
+      fetchFile(path).then(text => {
+        const newContents = contents;
+        newContents[type][name] = processMarkdown(text);
+        setContents(newContents);
+      });
     });
+  }
+
+  function fetchFile(path) {
+    return fetch(path).then(response => response.text());
   }
 
   function processMarkdown(text) {
@@ -43,7 +50,12 @@ export default function ContentProvider({ children }) {
 
   return (
     <ContentContext.Provider
-      value={{ blogs: contents.blogs, projects: contents.projects }}
+      value={{
+        blogs: contents.blogs,
+        projects: contents.projects,
+        processMarkdown,
+        fetchFile
+      }}
     >
       {children}
     </ContentContext.Provider>

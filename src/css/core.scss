@@ -31,3 +31,17 @@ img {
     transform: translateY(-2px);
   }
 }
+
+.articleContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.articleText {
+  max-width: 700px;
+}
+
+.articleAside {
+  width: 250px;
+}

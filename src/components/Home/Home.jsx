@@ -13,7 +13,7 @@ export default function Home() {
       <div className="home">
         <div>
           <div className="contentTeaserPanel">
-            <h2>Blogs</h2>
+            <h2>Recent Blogs</h2>
             <div className="contentTeasers">
               {Object.values(blogs).map(blog => (
                 <ContentTeaser
@@ -25,7 +25,7 @@ export default function Home() {
             </div>
           </div>
           <div className="contentTeaserPanel">
-            <h2>Projects</h2>
+            <h2>Recent Projects</h2>
             <div className="contentTeasers">
               {Object.values(projects).map(project => (
                 <ContentTeaser
