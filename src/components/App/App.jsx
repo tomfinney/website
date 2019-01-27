@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import routes from "../../constants/routes";
 
@@ -19,6 +19,7 @@ export default function App() {
     <ContentProvider>
       <BrowserRouter>
         <div className="pageWrapper">
+          <ScrollToTop />
           <Header />
           <Switch>
             <Route path={routes.about} component={About} exact />
@@ -33,4 +34,23 @@ export default function App() {
       </BrowserRouter>
     </ContentProvider>
   );
+}
+
+function ScrollToTop() {
+  return <Route render={route => <SrollToTopEffect {...route} />} />;
+}
+
+function SrollToTopEffect({ location }) {
+  const mounted = useRef(false);
+  useEffect(
+    function() {
+      if (mounted.current) {
+        window.scrollTo(0, 0);
+      }
+      mounted.current = true;
+    },
+    [location.pathname]
+  );
+
+  return null;
 }
