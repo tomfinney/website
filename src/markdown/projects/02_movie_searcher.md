@@ -8,6 +8,8 @@ thumb: https://i.imgur.com/l4UYpgu.jpg
 
 # Movie Seacher
 
+[Check it out here](https://mobiesearcher-1binb0nz3.now.sh/)
+
 When I heard about the [announcement of hooks at React Conf 2018](https://www.youtube.com/watch?v=V-QO-KO90iQ), I was STOKED.
 
 Hooks represent everything I wanted in React because I strongly preferred making functional components where possible. Previously, if you wanted to use any of the cool features of React, such as state or the lifecycle functions, you _had_ to make class component.
@@ -28,7 +30,7 @@ It's a bit janky in some places like the styling is a bit dismal and I don't thi
 
 Originally, it was hosted on [Heroku](https://www.heroku.com/) and it had the most janky hosting set up. I wasn't familiar with deploying JS only apps.
 
-My solution was to build the entire project locally, add that to my master branch and push that to straight to Heroku. Then, my production start script just calls [serve](https://www.npmjs.com/package/serve) which was configured to point to my dist folder. It's a pretty cool set up apart from that fact the dist folder was committed and I didn't create a proper build script.
+My solution was to build the entire project locally, add that to my master branch and push that to straight to Heroku. Then, my production start script just calls [serve](https://www.npmjs.com/package/serve) which was configured to point to my dist folder. It's a pretty cool set up apart from the fact the dist folder was committed and I didn't create a proper build script.
 
 Now, it's hosted on [Zeit](https://zeit.co/) and is easily deployed with [Now](https://zeit.co/now).
 
