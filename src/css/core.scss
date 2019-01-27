@@ -102,11 +102,13 @@ img {
     width: calc(100% - #{$largeGutter});
   }
 
-  &__img {
+  &__imgContainer {
     height: 200px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    padding: $normalGutter;
+  }
+
+  img {
+    display: block;
   }
 
   &__content {

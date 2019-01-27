@@ -8,15 +8,12 @@ export default function ContentTeaser({ content, contentType }) {
     <div className="contentTeaser">
       <div>
         <div
-          className={`contentTeaser__img ${
+          className={`contentTeaser__imgContainer ${
             content.meta.thumb ? "" : "translucent"
           }`}
-          style={{
-            backgroundImage: `url('${
-              content.meta.thumb ? content.meta.thumb : cameraSvg
-            }')`
-          }}
-        />
+        >
+          <img src={content.meta.thumb ? content.meta.thumb : cameraSvg} />
+        </div>
         <div className="contentTeaser__content">
           <h3>{content.meta.title}</h3>
           <p>{content.meta.summary}</p>

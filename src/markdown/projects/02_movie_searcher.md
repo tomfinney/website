@@ -1,7 +1,7 @@
 ---
 title: Movie Searcher
 date: "01-13-2019"
-summary: Website that searches for movies using hooks.
+summary: Simple website for quick movie searches using hooks.
 handle: movie-searcher
 thumb: https://i.imgur.com/l4UYpgu.jpg
 ---
