@@ -21,12 +21,19 @@
     text-decoration: none;
     color: $colorText;
   }
+
+  svg {
+    width: $largeGutter;
+    height: $largeGutter;
+  }
+}
+
+.headerInner {
+  flex: 1;
+  text-align: right;
 }
 
 .navLinks {
-  flex: 1;
-  text-align: right;
-
   a {
     padding: $smallGutter $largeGutter;
     background-color: $colorWhite;
@@ -57,7 +64,51 @@
 
   svg {
     margin-right: $smallGutter;
-    width: $largeGutter;
-    height: $largeGutter;
+  }
+
+  @media (max-width: 799px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    user-select: none;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: transparent;
+    transition: $transitionSpeed;
+
+    &.navLinksShow {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+      user-select: all;
+      background-color: rgba(255, 255, 255, 0.89);
+    }
+
+    a {
+      min-width: 50px;
+      background-color: transparent;
+    }
+  }
+}
+
+.navToggle {
+  margin-right: $normalGutter;
+  display: inline-block;
+  padding: $smallGutter 0;
+  position: relative;
+  z-index: 4;
+  cursor: pointer;
+  line-height: 12px;
+
+  @media (min-width: 800px) {
+    display: none;
   }
 }
