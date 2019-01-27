@@ -3,6 +3,7 @@ title: New website (first website)
 date: "01-13-2019"
 summary: About my mad website!
 handle: new-website
+thumb: https://i.imgur.com/UCKWQ29.jpg
 ---
 
 # New website (first website)
