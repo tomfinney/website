@@ -3,7 +3,8 @@ title: Movie Searcher
 date: "01-13-2019"
 summary: Simple website for quick movie searches using hooks.
 handle: movie-searcher
-thumb: https://i.imgur.com/l4UYpgu.jpg
+thumb: https://i.imgur.com/Fm4Xu9F.jpg
+alt: Small screenshot of the Movie Searcher website
 ---
 
 # Movie Seacher

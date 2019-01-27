@@ -3,7 +3,8 @@ title: About my new website
 date: "01-13-2019"
 summary: Behind the scenes of the website.
 handle: new-website
-thumb: https://i.imgur.com/UCKWQ29.jpg
+thumb: https://i.imgur.com/mUXJSMw.jpg
+alt: Small screenshot of my website
 ---
 
 # About my new website

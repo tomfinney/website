@@ -12,7 +12,10 @@ export default function ContentTeaser({ content, contentType }) {
             content.meta.thumb ? "" : "translucent"
           }`}
         >
-          <img src={content.meta.thumb ? content.meta.thumb : cameraSvg} />
+          <img
+            src={content.meta.thumb ? content.meta.thumb : cameraSvg}
+            alt={content.meta.alt}
+          />
         </div>
         <div className="contentTeaser__content">
           <h3>{content.meta.title}</h3>

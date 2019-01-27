@@ -1,9 +1,10 @@
 ---
 title: New website (first website)
-date: "01-13-2019"
+date: "01-27-2019"
 summary: About my mad website!
 handle: new-website
-thumb: https://i.imgur.com/UCKWQ29.jpg
+thumb: https://i.imgur.com/mUXJSMw.jpg
+alt: Small screenshot of my website
 ---
 
 # New website (first website)
