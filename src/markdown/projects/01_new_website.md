@@ -1,6 +1,6 @@
 ---
 title: About my new website
-date: "01-13-2019"
+date: "01-27-2019"
 summary: Behind the scenes of the website.
 handle: new-website
 thumb: https://i.imgur.com/mUXJSMw.jpg
@@ -8,6 +8,8 @@ alt: Small screenshot of my website
 ---
 
 # About my new website
+
+###### 01-27-2019
 
 I wanted to build more stuff and have a space to showcase the stuff I will build. What better place to start than making a website! You can read a bit more about the motivations [here.](/blogs/new-website)
 

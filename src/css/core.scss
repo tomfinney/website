@@ -57,6 +57,17 @@ img {
 
 .articleText {
   max-width: 700px;
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  h6 {
+    @extend .translucent;
+    font-size: 80%;
+    font-weight: normal;
+    margin: 0;
+  }
 }
 
 .articleAside {
@@ -131,8 +142,12 @@ img {
     }
   }
 
-  h3 {
+  &__title {
     margin: 0 0 $normalGutter;
+
+    h3 {
+      margin: 0;
+    }
   }
 
   p {

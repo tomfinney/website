@@ -9,6 +9,8 @@ alt: Small screenshot of my website
 
 # New website (first website)
 
+###### 01-27-2019
+
 Hi, this is my new website and it's actually the first personal website I've built!
 
 It's written in React using Parcel as the bundler and most of the content is driven by markdown files. You can read more about the tech [here.](/projects/new-website)

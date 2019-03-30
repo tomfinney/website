@@ -17,7 +17,10 @@ export default function ContentTeaser({ content, contentType }) {
         />
       </div>
       <div className="contentTeaser__content">
-        <h3>{content.meta.title}</h3>
+        <div className="contentTeaser__title">
+          <h3>{content.meta.title}</h3>
+          <small className="translucent">{content.meta.date}</small>
+        </div>
         <p>{content.meta.summary}</p>
       </div>
       <div className="contentTeaser__btnContainer">
