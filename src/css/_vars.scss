@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i");
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,400i,700");
 
 $siteWidth: 1100px;
 
@@ -20,6 +20,7 @@ $colorPrimaryLighter: #95baff;
 $colorText: #070707;
 
 $transitionSpeed: 0.22s;
+$radius: 4px;
 
 @mixin wrapped($padded: true) {
   > div {

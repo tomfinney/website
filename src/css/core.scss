@@ -38,9 +38,12 @@ img {
   display: inline-block;
   cursor: pointer;
   transition: $transitionSpeed;
+  border-radius: $radius;
+  text-align: center;
 
   &:hover {
-    transform: translateY(-2px);
+    background-color: $colorBlack;
+    color: $colorWhite;
   }
 }
 
@@ -89,6 +92,9 @@ img {
   margin-bottom: $largeGutter;
   background-color: $colorWhite;
   margin-left: $largeGutter;
+  border-radius: $radius;
+  display: flex;
+  flex-direction: column;
 
   @media (min-width: 900px) {
     width: calc(33.33% - #{$largeGutter});
@@ -113,11 +119,20 @@ img {
   }
 
   &__content {
-    padding: $largeGutter;
+    padding: 0 $largeGutter;
+    flex: 1;
+  }
+
+  &__btnContainer {
+    padding: 0 $largeGutter $largeGutter;
+
+    .btn {
+      width: 100%;
+    }
   }
 
   h3 {
-    margin: 0 0 $largeGutter;
+    margin: 0 0 $normalGutter;
   }
 
   p {
