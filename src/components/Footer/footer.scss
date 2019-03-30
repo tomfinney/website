@@ -1,0 +1,23 @@
+@import "../../css/_vars";
+
+.footer {
+  @include wrapped();
+  background-color: $colorDark;
+  color: $colorWhite;
+  margin-top: $largeGutter;
+  text-align: center;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  svg {
+    margin-right: $smallGutter;
+  }
+
+  small {
+    cursor: pointer;
+  }
+}

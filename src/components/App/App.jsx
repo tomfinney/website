@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import routes from "../../constants/routes";
 
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 import Home from "../Home/Home";
 import About from "../About/About";
 import ContentShow from "../ContentShow/ContentShow";
@@ -30,6 +31,7 @@ export default function App() {
             <Route path={routes.home} component={Home} exact />
             <Route path="/" component={Home} />
           </Switch>
+          <Footer />
         </div>
       </BrowserRouter>
     </ContentProvider>
