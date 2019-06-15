@@ -2,8 +2,5 @@
   "version": 2,
   "name": "toms website",
   "alias": ["tomfinney.com"],
-  "builds": [{ "src": "next.config.js", "use": "@now/next" }],
-  "env": {
-    "HOST": "https://toms-website.tomfinney25.now.sh"
-  }
+  "builds": [{ "src": "next.config.js", "use": "@now/next" }]
 }
