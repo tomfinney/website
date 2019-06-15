@@ -3,6 +3,11 @@ import Page from "./components/Page";
 import ContentTeaser from "./components/ContentTeaser";
 import { useMarkdownTeasers } from "./hooks/useMarkdownTeasers";
 
+// TODOS
+// 1. fav
+// 2. have the Page take meta info e.g. title/desc/etc
+// 3. cooler design
+
 export default () => {
   const contents = useMarkdownTeasers();
 
