@@ -1,32 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Page from "./components/Page";
 import Markdown from "./components/Markdown";
-
-function processMarkdown(text) {
-  const [meta, content] = text.split("---").filter(Boolean);
-  return import("js-yaml").then(yaml => ({
-    meta: yaml.load(meta),
-    content
-  }));
-}
-
-function useMarkdownContent(path) {
-  const [meta, setMeta] = useState({});
-  const [content, setContent] = useState("");
-
-  useEffect(() => {
-    fetch(path).then(response => {
-      response.text().then(text => {
-        processMarkdown(text).then(({ meta, content }) => {
-          setMeta(meta);
-          setContent(content);
-        });
-      });
-    });
-  }, []);
-
-  return { meta, content };
-}
+import { useMarkdownContent } from "./hooks/useMarkdownContent";
 
 export default () => {
   const { content } = useMarkdownContent("/static/markdown/about.md");
