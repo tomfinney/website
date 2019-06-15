@@ -4,9 +4,7 @@
   "author": "tom.finney@cd2solutions.co.uk <tom.finney@cd2solutions.co.uk>",
   "license": "MIT",
   "scripts": {
-    "dev": "next",
-    "build": "parcel build src/index.html",
-    "now-build": "parcel build src/index.html"
+    "dev": "next"
   },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",

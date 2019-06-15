@@ -4,7 +4,6 @@
   "alias": ["tomfinney.com"],
   "builds": [{ "src": "next.config.js", "use": "@now/next" }],
   "env": {
-    "HOST": "toms-website.tomfinney25.now.sh",
-    "PORT": 3000
+    "HOST": "https://toms-website.tomfinney25.now.sh"
   }
 }
