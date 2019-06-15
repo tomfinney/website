@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 
 export default function Markdown({ content }) {
@@ -9,7 +9,9 @@ export default function Markdown({ content }) {
         {children}
       </a>
     ) : (
-      <Link to={href}>{children}</Link>
+      <Link href={href}>
+        <a>{children}</a>
+      </Link>
     );
   }
 

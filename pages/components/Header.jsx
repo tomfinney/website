@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import Link from "next/link";
 import {
   MdHome,
   MdDescription,
@@ -8,7 +8,7 @@ import {
   MdMenu,
   MdClose
 } from "react-icons/md";
-import routes from "../../constants/routes";
+import routes from "../constants/routes";
 
 import "./header.scss";
 
@@ -25,7 +25,9 @@ export default function Header() {
     <header className="header">
       <div>
         <h2>
-          <Link to={routes.home}>tomfinney.com</Link>
+          <Link href={routes.home}>
+            <a>tomfinney.com</a>
+          </Link>
         </h2>
         <div className="headerInner">
           <div className="navToggle" onClick={() => setShowNav(!showNav)}>
@@ -33,14 +35,12 @@ export default function Header() {
           </div>
           <nav className={`navLinks ${showNav ? "navLinksShow" : ""}`}>
             {links.map(link => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                exact={link.to === routes.home}
-              >
-                <link.Icon />
-                <span>{link.text}</span>
-              </NavLink>
+              <Link key={link.to} href={link.to}>
+                <a>
+                  <link.Icon />
+                  <span>{link.text}</span>
+                </a>
+              </Link>
             ))}
           </nav>
         </div>
