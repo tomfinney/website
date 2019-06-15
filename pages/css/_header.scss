@@ -1,5 +1,3 @@
-@import "../css/_vars";
-
 .header {
   @include wrapped(false);
   background-color: $colorWhite;

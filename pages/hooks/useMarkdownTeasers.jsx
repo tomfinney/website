@@ -15,7 +15,7 @@ export function useMarkdownTeasers(
     if (types.includes("projects")) {
       fetchMarkdownContents("projects", setProjects);
     }
-  }, []);
+  }, [limit, types]);
 
   function fetchMarkdownContents(contentType, set) {
     const list = limit

@@ -1,8 +1,6 @@
 import React from "react";
 import { MdCopyright } from "react-icons/md";
 
-import "./footer.scss";
-
 export default function Footer() {
   function handleClick() {
     window.scrollTo({

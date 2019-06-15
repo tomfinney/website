@@ -10,8 +10,6 @@ import {
 } from "react-icons/md";
 import routes from "../constants/routes";
 
-import "./header.scss";
-
 const links = [
   { to: routes.home, Icon: MdHome, text: "Home" },
   { to: routes.about, Icon: MdFace, text: "About" },

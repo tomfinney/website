@@ -1,5 +1,6 @@
 @import "./_vars";
 
+// DEFAULTS
 * {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -18,6 +19,9 @@ img {
   max-width: 100%;
 }
 
+@import "./_footer";
+@import "./_header";
+
 .circle {
   border-radius: 50%;
 }
@@ -28,6 +32,10 @@ img {
 
 .pageWrapper {
   min-height: 100vh;
+}
+
+.pageInner {
+  @include wrapped();
 }
 
 .btn {

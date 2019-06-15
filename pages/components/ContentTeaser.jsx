@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import routes from "../constants/routes";
+// import routes from "../constants/routes";
 
 export default function ContentTeaser({ meta, type }) {
   return (
@@ -23,7 +23,10 @@ export default function ContentTeaser({ meta, type }) {
         <p>{meta.summary}</p>
       </div>
       <div className="contentTeaser__btnContainer">
-        <Link href={`${routes[type]}${meta.handle}`}>
+        <Link
+          // as={`${routes[type]}${meta.handle}`}
+          href={`/content?type=${type}&handle=${meta.handle}`}
+        >
           <a className="btn">Read More</a>
         </Link>
       </div>

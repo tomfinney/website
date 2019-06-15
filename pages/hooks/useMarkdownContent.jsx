@@ -14,7 +14,7 @@ export function useMarkdownContent(path) {
         });
       });
     });
-  }, []);
+  }, [path]);
 
   return { meta, content };
 }
