@@ -1,13 +1,14 @@
 import React from "react";
 import Page from "./components/Page";
 import ContentTeaser from "./components/ContentTeaser";
-import { useMarkdownTeasers } from "./hooks/useMarkdownTeasers";
+import { fetchMarkdownMeta } from "./utils/markdown";
 
-export default () => {
-  const { projects } = useMarkdownTeasers({ types: ["projects"] });
-
+function Projects({ projects }) {
   return (
-    <Page>
+    <Page
+      title="projects"
+      description="a collection of posts about projects that tom has been working on/finished"
+    >
       <div className="contentTeaserPanel">
         <h2>All projects</h2>
         <div className="contentTeasers">
@@ -18,4 +19,11 @@ export default () => {
       </div>
     </Page>
   );
+}
+
+Projects.getInitialProps = async () => {
+  const projects = await fetchMarkdownMeta({ type: "projects" });
+  return { projects };
 };
+
+export default Projects;

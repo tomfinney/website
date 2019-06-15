@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { processMarkdown } from "../utils/processMarkdown";
+import { fetchAndProcessMarkdown } from "../utils/markdown";
 import { content } from "../constants/content";
 
 export function useMarkdownTeasers(
@@ -16,21 +16,6 @@ export function useMarkdownTeasers(
       fetchMarkdownContents("projects", setProjects);
     }
   }, [limit, JSON.stringify(types)]);
-
-  function fetchMarkdownContents(contentType, set) {
-    const list = limit
-      ? content[contentType].slice(0, limit)
-      : content[contentType];
-    Promise.all(
-      list.map(path =>
-        fetch(`/static/markdown/${contentType}/${path}`).then(response =>
-          response
-            .text()
-            .then(text => processMarkdown(text).then(({ meta }) => meta))
-        )
-      )
-    ).then(meta => set(meta));
-  }
 
   return { blogs, projects };
 }

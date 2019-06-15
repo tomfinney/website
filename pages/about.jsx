@@ -1,12 +1,11 @@
 import React from "react";
 import Page from "./components/Page";
 import Markdown from "./components/Markdown";
-import { useMarkdownContent } from "./hooks/useMarkdownContent";
+import { fetchAndProcessMarkdown } from "./utils/markdown";
 
-export default () => {
-  const { content } = useMarkdownContent("/static/markdown/about.md");
+function About({ content }) {
   return (
-    <Page>
+    <Page title="about tom">
       <div className="articleContainer">
         <article className="articleText">
           {content && <Markdown content={content} />}
@@ -22,4 +21,14 @@ export default () => {
       </div>
     </Page>
   );
+}
+
+About.getInitialProps = async () => {
+  const { content } = await fetchAndProcessMarkdown(
+    "/static/markdown/about.md"
+  );
+
+  return { content };
 };
+
+export default About;

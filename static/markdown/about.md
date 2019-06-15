@@ -1,5 +1,5 @@
 ---
-title: Aboout
+title: About
 ---
 
 # About
