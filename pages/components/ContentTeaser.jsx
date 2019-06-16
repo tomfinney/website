@@ -34,7 +34,10 @@ export default function ContentTeaser({ meta, type }) {
 }
 
 function Button({ path, children }) {
-  const { containerRef, canvasRef } = useRough({ color: "#fff" });
+  const { containerRef, canvasRef } = useRough({
+    color: "#fff",
+    hachureGap: 4
+  });
   return (
     <div ref={containerRef} className="contentTeaser__btnContainer">
       <canvas ref={canvasRef} />

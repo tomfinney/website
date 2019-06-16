@@ -46,7 +46,7 @@ export function useRough({
       rc.rectangle(8, 8, rect.width, rect.height, {
         fill: color || randomColor,
         fillWeight: fillWeight || 3,
-        hachureGap: hachureGap || 5,
+        hachureGap: hachureGap || 6,
         strokeWidth: strokeWidth || 1,
         stroke: stroke || "#000"
       });

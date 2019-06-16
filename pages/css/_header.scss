@@ -1,8 +1,15 @@
 .header {
   @include wrapped(false);
-  background-color: $colorWhite;
+  position: relative;
   color: $colorText;
   height: 53px;
+  overflow: hidden;
+
+  canvas {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+  }
 
   > div {
     display: flex;
@@ -39,7 +46,6 @@
 .navLinks {
   a {
     padding: $smallGutter $largeGutter;
-    background-color: $colorWhite;
     transition: $transitionSpeed;
     color: $colorText;
     text-decoration: none;

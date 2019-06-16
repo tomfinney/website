@@ -9,6 +9,7 @@ import {
   MdClose
 } from "react-icons/md";
 import routes from "../constants/routes";
+import { useRough } from "../hooks/useRough";
 
 const links = [
   { to: routes.home, Icon: MdHome, text: "Home" },
@@ -19,8 +20,17 @@ const links = [
 
 export default function Header() {
   const [showNav, setShowNav] = useState(false);
+
+  const { containerRef, canvasRef } = useRough({
+    color: "#ebeff5",
+    hachureGap: 4,
+    strokeWidth: 0,
+    stroke: "transparent"
+  });
+
   return (
-    <header className="header">
+    <header ref={containerRef} className="header">
+      <canvas ref={canvasRef} />
       <div>
         <h2>
           <Link href={routes.home}>
