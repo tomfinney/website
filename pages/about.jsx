@@ -12,11 +12,11 @@ function About({ content }) {
         </article>
         <aside className="articleAside">
           <br />
-          <img
+          {/* <img
             className="circle"
             src="/static/images/me.jpg"
             alt="picture of tom"
-          />
+          /> */}
         </aside>
       </div>
     </Page>

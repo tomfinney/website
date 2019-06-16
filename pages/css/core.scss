@@ -30,29 +30,22 @@ img {
   opacity: 0.33;
 }
 
-.pageWrapper {
-  min-height: 100vh;
-}
-
 .pageInner {
   @include wrapped();
+  min-height: calc(100vh - 139px);
+  @media (max-width: 799px) {
+    min-height: calc(100vh - 124px);
+  }
 }
 
 .btn {
   padding: $smallGutter $largeGutter;
   color: $colorText;
   text-decoration: none;
-  border: 2px solid $colorText;
   display: inline-block;
-  cursor: pointer;
   transition: $transitionSpeed;
   border-radius: $radius;
   text-align: center;
-
-  &:hover {
-    background-color: $colorBlack;
-    color: $colorWhite;
-  }
 }
 
 .articleContainer {
@@ -109,11 +102,9 @@ img {
 
 .contentTeaser {
   margin-bottom: $largeGutter;
-  background-color: $colorWhite;
   margin-left: $largeGutter;
   border-radius: $radius;
-  display: flex;
-  flex-direction: column;
+  position: relative;
 
   @media (min-width: 900px) {
     width: calc(33.33% - #{$largeGutter});
@@ -127,37 +118,59 @@ img {
     width: calc(100% - #{$largeGutter});
   }
 
-  &__imgContainer {
-    height: 200px;
-    padding: $normalGutter;
+  canvas {
+    position: absolute;
+    top: -8px;
+    left: -8px;
   }
 
   img {
     display: block;
     margin: 0 auto;
   }
+}
 
-  &__content {
-    padding: 0 $largeGutter;
-    flex: 1;
+.contentTeaser__inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.contentTeaser__imgContainer {
+  height: 200px;
+  padding: $normalGutter;
+}
+
+.contentTeaser__content {
+  padding: 0 $largeGutter;
+  flex: 1;
+}
+
+.contentTeaser__btnContainer {
+  margin: 0 $largeGutter $largeGutter;
+  position: relative;
+
+  canvas {
+    position: absolute;
+    top: -8px;
+    left: -8px;
   }
 
-  &__btnContainer {
-    padding: 0 $largeGutter $largeGutter;
-
-    .btn {
-      width: 100%;
-    }
+  .btn {
+    position: relative;
+    z-index: 2;
+    width: 100%;
   }
+}
 
-  &__title {
-    margin: 0 0 $normalGutter;
+.contentTeaser__title {
+  margin: 0 0 $normalGutter;
 
-    h3 {
-      margin: 0;
-    }
+  h3 {
+    margin: 0;
   }
-
   p {
     margin: 0 0 $largeGutter;
   }

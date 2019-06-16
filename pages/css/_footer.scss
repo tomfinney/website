@@ -1,14 +1,27 @@
 .footer {
-  @include wrapped();
-  background-color: $colorDark;
   color: $colorWhite;
   margin-top: $largeGutter;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  height: 86px;
+
+  &__inner {
+    position: relative;
+    z-index: 2;
+    padding: $largeGutter $normalGutter $normalGutter;
+  }
 
   &__content {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  canvas {
+    position: absolute;
+    top: 0px;
+    left: -8px;
   }
 
   svg {

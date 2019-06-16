@@ -2,6 +2,7 @@
   @include wrapped(false);
   background-color: $colorWhite;
   color: $colorText;
+  height: 53px;
 
   > div {
     display: flex;
@@ -23,6 +24,10 @@
   svg {
     width: $largeGutter;
     height: $largeGutter;
+  }
+
+  @media (max-width: 799px) {
+    height: 41px;
   }
 }
 

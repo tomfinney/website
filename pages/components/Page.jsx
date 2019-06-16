@@ -9,7 +9,6 @@ export default function Page({ children, title, description }) {
   return (
     <div>
       <Head>
-        <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{title ? `${title} | ` : ""}tom's website</title>
         <meta
