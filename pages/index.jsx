@@ -4,11 +4,14 @@ import ContentTeaser from "./components/ContentTeaser";
 import { fetchMarkdownMeta } from "./utils/markdown";
 
 function Index({ blogs, projects }) {
+  const metas = [
+    ...blogs.map(b => ({ ...b, type: "blogs" })),
+    ...projects.map(b => ({ ...b, type: "projects" }))
+  ];
 
-  const metas = [...blogs.map(b => ({ ...b, type: 'blogs' })), ...projects.map(b => ({ ...b, type: 'projects' }))]
   const sortedMetas = metas.sort((a, b) => {
-    return b.date - a.date
-  })
+    return b.date - a.date;
+  });
 
   return (
     <Page>
@@ -16,7 +19,12 @@ function Index({ blogs, projects }) {
         <h2>Recent posts</h2>
         <div className="contentTeasers">
           {sortedMetas.map((meta, i) => (
-            <ContentTeaser key={meta.handle} meta={meta} type={meta.type} initialY={100 + (i * 20)} />
+            <ContentTeaser
+              key={meta.handle}
+              meta={meta}
+              type={meta.type}
+              initialY={100 + i * 20}
+            />
           ))}
         </div>
       </div>
