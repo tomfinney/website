@@ -3,25 +3,23 @@ import Page from "./components/Page";
 import ContentTeaser from "./components/ContentTeaser";
 import { fetchMarkdownMeta } from "./utils/markdown";
 
-// TODOS
-// 1. cooler design
+function Index({ blogs, projects }) {
 
-function Index(props) {
-  const contentTypes = ["blogs", "projects"];
+  const metas = [...blogs.map(b => ({ ...b, type: 'blogs' })), ...projects.map(b => ({ ...b, type: 'projects' }))]
+  const sortedMetas = metas.sort((a, b) => {
+    return b.date - a.date
+  })
 
   return (
     <Page>
-      {contentTypes.map(type => (
-        <div key={type} className="contentTeaserPanel">
-          <h2>Recent {type}</h2>
-          <div className="contentTeasers">
-            {props[type] &&
-              props[type].map(meta => (
-                <ContentTeaser key={meta.handle} meta={meta} type={type} />
-              ))}
-          </div>
+      <div className="contentTeaserPanel">
+        <h2>Recent posts</h2>
+        <div className="contentTeasers">
+          {sortedMetas.map(meta => (
+            <ContentTeaser key={meta.handle} meta={meta} type={meta.type} />
+          ))}
         </div>
-      ))}
+      </div>
     </Page>
   );
 }

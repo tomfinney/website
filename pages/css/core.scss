@@ -105,6 +105,8 @@ img {
   margin-left: $largeGutter;
   border-radius: $radius;
   position: relative;
+  background-color: #e5e5e5;
+;
 
   @media (min-width: 900px) {
     width: calc(33.33% - #{$largeGutter});

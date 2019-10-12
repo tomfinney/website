@@ -1,17 +1,27 @@
 import React from "react";
 import Link from "next/link";
 import { useRough } from "../hooks/useRough";
+import { motion } from "framer-motion"
 
 export default function ContentTeaser({ meta, type }) {
-  const { containerRef, canvasRef } = useRough();
+
   return (
-    <div ref={containerRef} className="contentTeaser">
-      <canvas ref={canvasRef} />
+    <motion.div
+      initial={{
+        opacity: 0.05,
+        y: 100,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      className="contentTeaser"
+    >
       <div className="contentTeaser__inner">
         <div
           className={`contentTeaser__imgContainer ${
             meta.thumb ? "" : "translucent"
-          }`}
+            }`}
         >
           <img
             src={meta.thumb ? meta.thumb : "/static/images/camera.svg"}
@@ -29,7 +39,7 @@ export default function ContentTeaser({ meta, type }) {
           Read More
         </Button>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
