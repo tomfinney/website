@@ -3,16 +3,24 @@ import rough from "roughjs/dist/rough.umd";
 
 const colors = ["#fffecb", "#ffcbcb", "#cbffe5", "#cbf7ff", "#ffcbfd"];
 
+interface IOpts {
+  color?: string;
+  fillWeight?: number;
+  hachureGap?: number;
+  strokeWidth?: number;
+  stroke?: string;
+}
+
 export function useRough({
   color,
   fillWeight,
   hachureGap,
   strokeWidth,
   stroke
-} = {}) {
+}: IOpts = {}) {
   const containerRef = useRef(null);
   const canvasRef = useRef(null);
-  const [rect, setRect] = useState({});
+  const [rect, setRect] = useState<{ height?: number; width?: number }>({});
 
   useEffect(() => {
     measureContainer();

@@ -5,7 +5,13 @@ import Head from "next/head";
 
 import "../css/core.scss";
 
-export default function Page({ children, title, description }) {
+interface IProps {
+  children: React.ReactNode;
+  title?: string;
+  description?: string;
+}
+
+export default function Page({ children, title, description }: IProps) {
   return (
     <div>
       <Head>

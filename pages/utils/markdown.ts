@@ -2,7 +2,7 @@ import { fetch } from "./fetch";
 import { content } from "../constants/content";
 import yaml from "js-yaml";
 
-export function processMarkdown(text) {
+export function processMarkdown(text: string) {
   const [meta, content] = text.split("---").filter(Boolean);
   return {
     meta: yaml.load(meta),
@@ -10,16 +10,20 @@ export function processMarkdown(text) {
   };
 }
 
-export function fetchMarkdown(path) {
+export function fetchMarkdown(path: string) {
   return fetch(path).then(response => response.text().then(text => text));
 }
 
-export async function fetchAndProcessMarkdown(path) {
+export async function fetchAndProcessMarkdown(path: string) {
   const text = await fetchMarkdown(path);
   return await processMarkdown(text);
 }
 
-export function fetchMarkdownMeta({ type, limit }) {
+interface IFetchMetaOpts {
+  type: "blogs" | "projects";
+  limit?: number;
+}
+export function fetchMarkdownMeta({ type, limit }: IFetchMetaOpts) {
   const list = limit ? content[type].slice(0, limit) : content[type];
   return Promise.all(
     list.map(path =>
