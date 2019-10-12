@@ -3,13 +3,13 @@ import Link from "next/link";
 import { useRough } from "../hooks/useRough";
 import { motion } from "framer-motion"
 
-export default function ContentTeaser({ meta, type }) {
+export default function ContentTeaser({ meta, type, initialY = 100 }) {
 
   return (
     <motion.div
       initial={{
         opacity: 0.05,
-        y: 100,
+        y: initialY,
       }}
       animate={{
         opacity: 1,

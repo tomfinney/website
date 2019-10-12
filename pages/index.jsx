@@ -15,8 +15,8 @@ function Index({ blogs, projects }) {
       <div className="contentTeaserPanel">
         <h2>Recent posts</h2>
         <div className="contentTeasers">
-          {sortedMetas.map(meta => (
-            <ContentTeaser key={meta.handle} meta={meta} type={meta.type} />
+          {sortedMetas.map((meta, i) => (
+            <ContentTeaser key={meta.handle} meta={meta} type={meta.type} initialY={100 + (i * 20)} />
           ))}
         </div>
       </div>
