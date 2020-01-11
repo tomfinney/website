@@ -5,8 +5,7 @@
   "builds": [{ "src": "next.config.js", "use": "@now/next" }],
   "build": {
     "env": {
-      "NODE_ENV": "production",
-      "PROD_HOST": "@website_prod_host"
+      "HOST": "@website_prod_host"
     }
   }
 }
