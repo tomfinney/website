@@ -31,7 +31,10 @@ export default function Header() {
           <div className="navToggle" onClick={() => setShowNav(!showNav)}>
             {showNav ? <MdClose /> : <MdMenu />}
           </div>
-          <nav className={`navLinks ${showNav ? "navLinksShow" : ""}`}>
+          <nav
+            className={`navLinks ${showNav ? "navLinksShow" : ""}`}
+            onClick={showNav ? () => setShowNav(false) : undefined}
+          >
             {links.map(link => (
               <Link key={link.to} href={link.to}>
                 <a>
