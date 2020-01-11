@@ -12,7 +12,7 @@ type: project
 
 ###### 01-27-2019
 
-I wanted to build more stuff and have a space to showcase the stuff I will build. What better place to start than making a website! You can read a bit more about the motivations [here.](/blogs/new-website)
+I wanted to build more stuff and have a space to showcase the stuff I will build. What better place to start than making a website!
 
 This website was built from the ground up using React. Trusty old Parcel was used to bundle it. I love Parcel so much. It takes away those initial barriers such that you can just focus on making something.
 

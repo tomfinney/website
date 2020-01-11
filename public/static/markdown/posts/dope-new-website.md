@@ -14,7 +14,7 @@ type: blog
 
 Hi, this is my new website and it's actually the first personal website I've built!
 
-It's written in React using Parcel as the bundler and most of the content is driven by markdown files. You can read more about the tech [here.](/projects/new-website)
+It's written in React using Parcel as the bundler and most of the content is driven by markdown files.
 
 I wanted a really flat and minimalist design and I ended up with this drab look. I kinda like it. I was gonna use some pastel colours but I couldn't get the right feel.
 
