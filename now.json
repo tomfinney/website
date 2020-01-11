@@ -2,5 +2,10 @@
   "version": 2,
   "name": "toms website",
   "alias": ["tomfinney.com"],
-  "builds": [{ "src": "next.config.js", "use": "@now/next" }]
+  "builds": [{ "src": "next.config.js", "use": "@now/next" }],
+  "build": {
+    "env": {
+      "PROD_HOST": "@website_prod_host"
+    }
+  }
 }
