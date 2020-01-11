@@ -3,11 +3,11 @@ import Page from "./components/Page";
 import ContentTeaser from "./components/ContentTeaser";
 import { fetchMarkdownMeta } from "./utils/markdown";
 
-function Index({ posts }) {
+function Posts({ posts }) {
   return (
-    <Page>
+    <Page title="posts" description="a collection of posts tom has authored">
       <div className="contentTeaserPanel">
-        <h2>Recent posts</h2>
+        <h2>All posts</h2>
         <div className="contentTeasers">
           {posts.map((meta, i) => (
             <ContentTeaser
@@ -22,9 +22,9 @@ function Index({ posts }) {
   );
 }
 
-Index.getInitialProps = async () => {
-  const posts = await fetchMarkdownMeta({ order: "desc", limit: 3 });
+Posts.getInitialProps = async () => {
+  const posts = await fetchMarkdownMeta({ order: "desc" });
   return { posts };
 };
 
-export default Index;
+export default Posts;

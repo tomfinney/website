@@ -2,9 +2,10 @@
 title: About my new website
 date: "01-27-2019"
 summary: Behind the scenes of the website.
-handle: new-website
+handle: about-new-website
 thumb: https://i.imgur.com/mUXJSMw.jpg
 alt: Small screenshot of my website
+type: project
 ---
 
 # About my new website

@@ -2,9 +2,10 @@
 title: New website (first website)
 date: "01-27-2019"
 summary: About my mad website!
-handle: new-website
+handle: dope-new-website
 thumb: https://i.imgur.com/mUXJSMw.jpg
 alt: Small screenshot of my website
+type: blog
 ---
 
 # New website (first website)

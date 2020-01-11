@@ -13,8 +13,7 @@ import routes from "../constants/routes";
 const links = [
   { to: routes.home, Icon: MdHome, text: "Home" },
   { to: routes.about, Icon: MdFace, text: "About" },
-  { to: routes.blogs, Icon: MdDescription, text: "Blogs" },
-  { to: routes.projects, Icon: MdWork, text: "Projects" }
+  { to: routes.posts, Icon: MdDescription, text: "Posts" }
 ];
 
 export default function Header() {

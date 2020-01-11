@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-export default function ContentTeaser({ meta, type, initialY = 100 }) {
+export default function ContentTeaser({ meta, initialY = 100 }) {
   return (
     <motion.div
       initial={{
@@ -33,9 +33,7 @@ export default function ContentTeaser({ meta, type, initialY = 100 }) {
           </div>
           <p>{meta.summary}</p>
         </div>
-        <Button path={`/content?type=${type}&handle=${meta.handle}`}>
-          Read More
-        </Button>
+        <Button path={`/post?handle=${meta.handle}`}>Read More</Button>
       </div>
     </motion.div>
   );

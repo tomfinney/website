@@ -12,11 +12,6 @@ function About({ content }) {
         </article>
         <aside className="articleAside">
           <br />
-          {/* <img
-            className="circle"
-            src="/static/images/me.jpg"
-            alt="picture of tom"
-          /> */}
         </aside>
       </div>
     </Page>
@@ -25,7 +20,7 @@ function About({ content }) {
 
 About.getInitialProps = async () => {
   const { content } = await fetchAndProcessMarkdown(
-    "/static/markdown/about.md"
+    "/static/markdown/misc/about.md"
   );
 
   return { content };

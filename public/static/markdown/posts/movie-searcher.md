@@ -5,6 +5,7 @@ summary: Simple website for quick movie searches using hooks.
 handle: movie-searcher
 thumb: https://i.imgur.com/Fm4Xu9F.jpg
 alt: Small screenshot of the Movie Searcher website
+type: project
 ---
 
 # Movie Seacher

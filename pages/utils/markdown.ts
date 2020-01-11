@@ -1,5 +1,5 @@
 import { fetch } from "./fetch";
-import { content } from "../constants/content";
+import { posts } from "../constants/posts";
 import yaml from "js-yaml";
 
 export function processMarkdown(text: string) {
@@ -20,14 +20,17 @@ export async function fetchAndProcessMarkdown(path: string) {
 }
 
 interface IFetchMetaOpts {
-  type: "blogs" | "projects";
+  order?: "asc" | "desc";
   limit?: number;
 }
-export function fetchMarkdownMeta({ type, limit }: IFetchMetaOpts) {
-  const list = limit ? content[type].slice(0, limit) : content[type];
+
+export function fetchMarkdownMeta({ limit, order = "asc" }: IFetchMetaOpts) {
+  let orderedPosts = order === "asc" ? [...posts] : [...posts].reverse();
+  orderedPosts = limit ? orderedPosts.slice(0, limit) : orderedPosts;
+
   return Promise.all(
-    list.map(path =>
-      fetchAndProcessMarkdown(`/static/markdown/${type}/${path}`).then(
+    orderedPosts.map(path =>
+      fetchAndProcessMarkdown(`/static/markdown/posts/${path}`).then(
         ({ meta }) => meta
       )
     )
