@@ -1,7 +1,7 @@
 import React from "react";
-import Page from "./components/Page";
-import Markdown from "./components/Markdown";
-import { fetchAndProcessMarkdown } from "./utils/markdown";
+import Page from "../src/components/Page";
+import Markdown from "../src/components/Markdown";
+import { fetchAndProcessMarkdown } from "../src/utils/markdown";
 
 function About({ content }) {
   return (

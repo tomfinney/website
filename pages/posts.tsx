@@ -1,7 +1,7 @@
 import React from "react";
-import Page from "./components/Page";
-import ContentTeaser from "./components/ContentTeaser";
-import { fetchMarkdownMeta } from "./utils/markdown";
+import Page from "../src/components/Page";
+import ContentTeaser from "../src/components/ContentTeaser";
+import { fetchMarkdownMeta } from "../src/utils/markdown";
 
 function Posts({ posts }) {
   return (

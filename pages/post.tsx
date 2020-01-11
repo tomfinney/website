@@ -1,8 +1,11 @@
 import React from "react";
 import Link from "next/link";
-import Page from "./components/Page";
-import Markdown from "./components/Markdown";
-import { fetchAndProcessMarkdown, fetchMarkdownMeta } from "./utils/markdown";
+import Page from "../src/components/Page";
+import Markdown from "../src/components/Markdown";
+import {
+  fetchAndProcessMarkdown,
+  fetchMarkdownMeta
+} from "../src/utils/markdown";
 
 function Post({ content, meta, sidemenuMeta }) {
   const types = ["blog", "project"];
