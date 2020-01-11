@@ -5,7 +5,6 @@
   color: $colorWhite;
   overflow: hidden;
   border-bottom: 1px solid #e5e5e5;
-  backdrop-filter: saturate(180%) blur(20px);
 
   > div {
     display: flex;
@@ -29,10 +28,6 @@
     width: $normalGutter;
     height: $normalGutter;
   }
-
-  @media (max-width: 799px) {
-    height: 41px;
-  }
 }
 
 .headerInner {
@@ -44,7 +39,6 @@
   a {
     padding: $smallestGutter $largeGutter;
     transition: $transitionSpeed;
-    color: $colorWhite;
     text-decoration: none;
     display: inline-block;
     vertical-align: middle;
@@ -56,7 +50,7 @@
 
   .active {
     text-decoration: underline;
-    border-bottom-color: $colorDark;
+    border-bottom-color: $colorBlack;
   }
 
   a * {
@@ -71,6 +65,12 @@
 
   svg {
     margin-right: $smallGutter;
+  }
+
+  @media (min-width: 800px) {
+    a {
+      color: $colorWhite;
+    }
   }
 
   @media (max-width: 799px) {

@@ -103,10 +103,9 @@ img {
 .contentTeaser {
   margin-bottom: $largeGutter;
   margin-left: $largeGutter;
-  border-radius: $radius;
   position: relative;
-  background-color: #e5e5e5;
-;
+  background-color: $colorGrey;
+  border-radius: $radius;
 
   @media (min-width: 900px) {
     width: calc(33.33% - #{$largeGutter});
@@ -118,12 +117,6 @@ img {
 
   @media (max-width: 499px) {
     width: calc(100% - #{$largeGutter});
-  }
-
-  canvas {
-    position: absolute;
-    top: -8px;
-    left: -8px;
   }
 
   img {
@@ -146,7 +139,7 @@ img {
 }
 
 .contentTeaser__content {
-  padding: 0 $largeGutter;
+  padding: $largeGutter $largeGutter 0;
   flex: 1;
 }
 
@@ -164,6 +157,8 @@ img {
     position: relative;
     z-index: 2;
     width: 100%;
+    background-color: $colorWhite;
+    font-weight: bold;
   }
 }
 

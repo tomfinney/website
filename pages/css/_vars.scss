@@ -13,16 +13,12 @@ $fontFamily: "Cabin";
 
 $colorWhite: #fff;
 $colorBlack: rgba(0, 0, 0, 0.8);
-$colorDark: #070707;
-$colorGrey: rgba(0, 0, 0, 0.1);
-$colorGreyLight: #ebeff5;
+$colorGrey: rgba(242, 242, 242, 1);
 $colorPrimary: #5b95ff;
-$colorPrimaryLight: #76a6ff;
-$colorPrimaryLighter: #95baff;
-$colorText: #070707;
+$colorText: $colorBlack;
 
 $transitionSpeed: 0.22s;
-$radius: 4px;
+$radius: 2px;
 
 @mixin wrapped($padded: true) {
   > div {

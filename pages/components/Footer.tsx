@@ -14,7 +14,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer__inner">
         <div className="footer__content">
-          <MdCopyright /> tomfinney.com 2019
+          <MdCopyright /> tomfinney.com {new Date().getFullYear()}
         </div>
         <div className="footer__content">
           <small onClick={handleClick}>Back up</small>

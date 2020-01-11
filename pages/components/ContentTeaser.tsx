@@ -16,16 +16,6 @@ export default function ContentTeaser({ meta, initialY = 100 }) {
       className="contentTeaser"
     >
       <div className="contentTeaser__inner">
-        <div
-          className={`contentTeaser__imgContainer ${
-            meta.thumb ? "" : "translucent"
-          }`}
-        >
-          <img
-            src={meta.thumb ? meta.thumb : "/static/images/camera.svg"}
-            alt={meta.alt}
-          />
-        </div>
         <div className="contentTeaser__content">
           <div className="contentTeaser__title">
             <h3>{meta.title}</h3>
