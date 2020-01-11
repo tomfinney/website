@@ -6,6 +6,9 @@
   "scripts": {
     "dev": "next"
   },
+  "engines": {
+    "node": "^10 || ^12"
+  },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
     "dotenv": "^8.0.0",
