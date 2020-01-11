@@ -24,7 +24,7 @@ function Post({ content, meta, sidemenuMeta }) {
                   .filter(meta => meta.type === type)
                   .map(meta => (
                     <Link
-                      href={`/post?&handle=${meta.handle}`}
+                      href={`/post?handle=${meta.handle}`}
                       key={meta.handle}
                     >
                       <a>{meta.title}</a>
