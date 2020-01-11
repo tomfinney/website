@@ -4,15 +4,17 @@ $siteWidth: 1100px;
 
 $normalGutter: 16px;
 $smallGutter: 8px;
+$smallerGutter: 4px;
+$smallestGutter: 2px;
 $largeGutter: 24px;
 $largerGutter: 48px;
 
 $fontFamily: "Cabin";
 
 $colorWhite: #fff;
-$colorBlack: #000;
+$colorBlack: rgba(0, 0, 0, 0.8);
 $colorDark: #070707;
-$colorGrey: #40434e;
+$colorGrey: rgba(0, 0, 0, 0.1);
 $colorGreyLight: #ebeff5;
 $colorPrimary: #5b95ff;
 $colorPrimaryLight: #76a6ff;

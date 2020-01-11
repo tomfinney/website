@@ -1,16 +1,11 @@
 .header {
   @include wrapped(false);
   position: relative;
-  color: $colorText;
-  height: 53px;
+  background-color: $colorBlack;
+  color: $colorWhite;
   overflow: hidden;
   border-bottom: 1px solid #e5e5e5;
-
-  canvas {
-    position: absolute;
-    top: -8px;
-    left: -8px;
-  }
+  backdrop-filter: saturate(180%) blur(20px);
 
   > div {
     display: flex;
@@ -22,16 +17,17 @@
     padding: 0 0 0 $normalGutter;
     user-select: none;
     cursor: pointer;
+    font-weight: normal;
   }
 
   h2 a {
     text-decoration: none;
-    color: $colorText;
+    color: $colorWhite;
   }
 
   svg {
-    width: $largeGutter;
-    height: $largeGutter;
+    width: $normalGutter;
+    height: $normalGutter;
   }
 
   @media (max-width: 799px) {
@@ -46,9 +42,9 @@
 
 .navLinks {
   a {
-    padding: $smallGutter $largeGutter;
+    padding: $smallestGutter $largeGutter;
     transition: $transitionSpeed;
-    color: $colorText;
+    color: $colorWhite;
     text-decoration: none;
     display: inline-block;
     vertical-align: middle;
@@ -70,7 +66,7 @@
   }
 
   a:hover {
-    border-bottom-color: $colorDark;
+    border-bottom-color: $colorWhite;
   }
 
   svg {
