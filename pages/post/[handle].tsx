@@ -1,11 +1,11 @@
 import React from "react";
-import Link from "next/link";
-import Page from "../src/components/Page";
-import Markdown from "../src/components/Markdown";
+import Page from "../../src/components/Page";
+import Markdown from "../../src/components/Markdown";
 import {
   fetchAndProcessMarkdown,
   fetchMarkdownMeta
-} from "../src/utils/markdown";
+} from "../../src/utils/markdown";
+import { PostLink } from "../../src/components/PostLink";
 
 function Post({ content, meta, sidemenuMeta }) {
   const types = ["blog", "project"];
@@ -19,18 +19,13 @@ function Post({ content, meta, sidemenuMeta }) {
           {types.map(type => (
             <div key={type} className="articleAside">
               <h2>More {type}s</h2>
-              <p className="articleAsideLinks">
-                {sidemenuMeta
-                  .filter(meta => meta.type === type)
-                  .map(meta => (
-                    <Link
-                      href={`/post?handle=${meta.handle}`}
-                      key={meta.handle}
-                    >
-                      <a>{meta.title}</a>
-                    </Link>
-                  ))}
-              </p>
+              {sidemenuMeta
+                .filter(meta => meta.type === type)
+                .map(meta => (
+                  <PostLink handle={meta.handle} key={meta.handle}>
+                    {meta.title}
+                  </PostLink>
+                ))}
               {sidemenuMeta.length < 1 && <p>Sorry, no other {type} :(</p>}
             </div>
           ))}
@@ -41,9 +36,8 @@ function Post({ content, meta, sidemenuMeta }) {
 }
 
 Post.getInitialProps = async ({ query }) => {
-  const handle = query.handle;
   const { content, meta } = await fetchAndProcessMarkdown(
-    `/static/markdown/posts/${handle}.md`
+    `/static/markdown/posts/${query.handle}.md`
   );
 
   const sidemenuMeta = await fetchMarkdownMeta({ order: "desc" });

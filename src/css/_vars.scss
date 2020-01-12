@@ -27,7 +27,7 @@ $radius: 2px;
     position: relative;
 
     @if $padded {
-      padding: $normalGutter;
+      padding: 0 $normalGutter;
     }
   }
 }

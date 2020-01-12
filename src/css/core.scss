@@ -49,6 +49,7 @@ img {
 }
 
 .articleContainer {
+  padding: $largeGutter 0;
   @media (min-width: 900px) {
     display: flex;
     align-items: flex-start;
@@ -58,6 +59,10 @@ img {
 
 .articleText {
   max-width: 700px;
+
+  > *:first-child {
+    margin-top: 0;
+  }
 
   h1 {
     margin-bottom: 0;
@@ -72,15 +77,21 @@ img {
 }
 
 .articleAside {
+  h2 {
+    margin: 0 0 $normalGutter;
+  }
+
+  a {
+    display: block;
+  }
+
+  & + .articleAside {
+    margin-top: $largeGutter;
+  }
+
   @media (min-width: 900px) {
     margin-left: $largeGutter;
     width: 250px;
-  }
-}
-
-.articleAsideLinks {
-  a {
-    display: block;
   }
 }
 

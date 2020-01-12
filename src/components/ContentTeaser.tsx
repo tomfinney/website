@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { PostLink } from "./PostLink";
 
 export default function ContentTeaser({ meta, initialY = 100 }) {
   return (
@@ -23,18 +24,12 @@ export default function ContentTeaser({ meta, initialY = 100 }) {
           </div>
           <p>{meta.summary}</p>
         </div>
-        <Button path={`/post?handle=${meta.handle}`}>Read More</Button>
+        <div className="contentTeaser__btnContainer">
+          <PostLink handle={meta.handle} className="btn">
+            Read More
+          </PostLink>
+        </div>
       </div>
     </motion.div>
-  );
-}
-
-function Button({ path, children }) {
-  return (
-    <div className="contentTeaser__btnContainer">
-      <Link href={path}>
-        <a className="btn">{children}</a>
-      </Link>
-    </div>
   );
 }
