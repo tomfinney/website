@@ -183,3 +183,20 @@ img {
     margin: 0 0 $largeGutter;
   }
 }
+
+.tag {
+  padding: $smallerGutter $smallGutter;
+  border-radius: 16px;
+  line-height: 1;
+  color: $colorWhite;
+  display: inline-block;
+  margin: 0 $smallerGutter;
+
+  &--project {
+    background-color: #ff8989;
+  }
+
+  &--blog {
+    background-color: #89d3ff;
+  }
+}

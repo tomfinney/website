@@ -21,6 +21,7 @@ export default function ContentTeaser({ meta, initialY = 100 }) {
           <div className="contentTeaser__title">
             <h3>{meta.title}</h3>
             <small className="translucent">{meta.date}</small>
+            <span className={`tag tag--${meta.type}`}>{meta.type}</span>
           </div>
           <p>{meta.summary}</p>
         </div>
