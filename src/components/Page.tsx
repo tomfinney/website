@@ -3,8 +3,6 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Head from "next/head";
 
-
-
 interface IProps {
   children: React.ReactNode;
   title?: string;
@@ -19,11 +17,7 @@ export default function Page({ children, title, description }: IProps) {
         <title>{title ? `${title} | ` : ""}tom's website</title>
         <meta
           name="description"
-          content={
-            description
-              ? description
-              : "Personal website of Tom Finney and his ramblings (sometimes talks about Javascript)."
-          }
+          content={description ? description : "Personal website of Tom Finney"}
         />
         <link rel="icon" type="image/png" href="/static/images/fav.png" />
         <script
@@ -37,7 +31,7 @@ export default function Page({ children, title, description }: IProps) {
               dataLayer.push(arguments);
             }
             gtag("js", new Date());
-            gtag("config", "UA-133286888-1");`
+            gtag("config", "UA-133286888-1");`,
           }}
         />
       </Head>
@@ -46,6 +40,33 @@ export default function Page({ children, title, description }: IProps) {
         <div>{children}</div>
       </div>
       <Footer />
+      <style jsx global>
+        {`
+          @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
+
+          * {
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+          }
+
+          body {
+            background-color: $colorWhite;
+            color: #111111;
+            margin: 0;
+            font-family: Inter, sans-serif;
+            line-height: 1.6;
+          }
+
+          a {
+            text-decoration: none;
+          }
+
+          img {
+            max-width: 100%;
+          }
+        `}
+      </style>
     </div>
   );
 }

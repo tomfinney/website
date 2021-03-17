@@ -6,8 +6,20 @@ import { images } from "../src/constants/images";
 
 function Index({ posts }) {
   const image = images[Math.floor(Math.random() * images.length)];
+
   return (
     <Page>
+      <div className="contentTeaserPanel">
+        <div
+          style={{
+            backgroundImage: `url('/static/images/${image.src}')`,
+            height: 500,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            borderRadius: 2,
+          }}
+        />
+      </div>
       <div className="contentTeaserPanel">
         <h2>Recent posts</h2>
         <div className="contentTeasers">
@@ -19,18 +31,6 @@ function Index({ posts }) {
             />
           ))}
         </div>
-      </div>
-      <div className="contentTeaserPanel">
-        <h2>Random photo</h2>
-        <div
-          style={{
-            backgroundImage: `url('/static/images/${image.src}')`,
-            height: 500,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            borderRadius: 2
-          }}
-        />
       </div>
     </Page>
   );
