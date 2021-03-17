@@ -3,7 +3,6 @@ import Page from "../src/components/Page";
 import ContentTeaser from "../src/components/ContentTeaser";
 import { fetchMarkdownMeta } from "../src/utils/markdown";
 import { images } from "../src/constants/images";
-import { motion } from "framer-motion";
 
 function Index({ posts }) {
   const image = images[Math.floor(Math.random() * images.length)];
@@ -23,15 +22,7 @@ function Index({ posts }) {
       </div>
       <div className="contentTeaserPanel">
         <h2>Random photo</h2>
-        <motion.div
-          initial={{
-            opacity: 0.05,
-            y: 100
-          }}
-          animate={{
-            opacity: 1,
-            y: 0
-          }}
+        <div
           style={{
             backgroundImage: `url('/static/images/${image.src}')`,
             height: 500,

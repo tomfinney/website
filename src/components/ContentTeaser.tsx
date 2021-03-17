@@ -1,18 +1,9 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { PostLink } from "./PostLink";
 
 export default function ContentTeaser({ meta, initialY = 100 }) {
   return (
-    <motion.div
-      initial={{
-        opacity: 0.05,
-        y: initialY
-      }}
-      animate={{
-        opacity: 1,
-        y: 0
-      }}
+    <div
       className="contentTeaser"
     >
       <div className="contentTeaser__inner">
@@ -30,6 +21,6 @@ export default function ContentTeaser({ meta, initialY = 100 }) {
           </PostLink>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
