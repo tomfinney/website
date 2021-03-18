@@ -9,7 +9,7 @@ interface IProps {
 
 export function PostLink({ handle, children, className }: IProps) {
   return (
-    <Link href="/post/[handle]" as={`/post/${handle}`}>
+    <Link href="/posts/[handle]" as={`/posts/${handle}`}>
       <a className={className}>{children}</a>
     </Link>
   );

@@ -36,9 +36,7 @@ export default function Page({ children, title, description }: IProps) {
         />
       </Head>
       <Header />
-      <div className="pageInner">
-        <div>{children}</div>
-      </div>
+      {children}
       <Footer />
       <style jsx global>
         {`

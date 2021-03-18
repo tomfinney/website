@@ -1,14 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import {
-  MdHome,
-  MdDescription,
-  MdFace,
-  MdWork,
-  MdMenu,
-  MdClose,
-} from "react-icons/md";
+import { MdHome, MdDescription, MdFace, MdMenu, MdClose } from "react-icons/md";
 import routes from "../constants/routes";
 
 const links = [

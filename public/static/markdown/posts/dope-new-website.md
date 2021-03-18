@@ -20,6 +20,6 @@ I wanted a really flat and minimalist design and I ended up with this drab look.
 
 The main reason I made this website is that I wanna get better at coding and have stuff to show for it. To paraphrase some smarter people than me: the best way to get better at something is to do more of it.
 
-I saw Dan Abramov's [cool blog](https://overreacted.io/) and I wanted to have something similar. That blog was built using a Gatsby template which is neat but I thought it would be cool to build it from scratch.
+I saw Dan Abramov's [blog](https://overreacted.io/) and I wanted to have something similar. That blog was built using a Gatsby template which is neat but I thought it would be cool to build it from scratch.
 
 I will work on more side projects and hopefully post about them here when I finish them. There's tons of stuff I wanna learn more about. The one thing I wanna play around with is GraphQL so it'd be cool to set up an api/front-end to learn about it.

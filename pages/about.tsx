@@ -6,14 +6,23 @@ import { fetchAndProcessMarkdown } from "../src/utils/markdown";
 function About({ content }) {
   return (
     <Page title="about tom">
-      <div className="articleContainer">
+      <main>
         <article className="articleText">
           {content && <Markdown content={content} />}
         </article>
         <aside className="articleAside">
           <br />
         </aside>
-      </div>
+      </main>
+      <style jsx>
+        {`
+          main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 64px 16px 32px;
+          }
+        `}
+      </style>
     </Page>
   );
 }

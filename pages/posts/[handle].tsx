@@ -3,7 +3,7 @@ import Page from "../../src/components/Page";
 import Markdown from "../../src/components/Markdown";
 import {
   fetchAndProcessMarkdown,
-  fetchMarkdownMeta
+  fetchMarkdownMeta,
 } from "../../src/utils/markdown";
 import { PostLink } from "../../src/components/PostLink";
 
@@ -11,17 +11,17 @@ function Post({ content, meta, sidemenuMeta }) {
   const types = ["blog", "project"];
   return (
     <Page title={meta.title} description={meta.summary}>
-      <div className="articleContainer">
+      <main>
         <article className="articleText">
           {content && <Markdown content={content} />}
         </article>
         <aside>
-          {types.map(type => (
+          {types.map((type) => (
             <div key={type} className="articleAside">
               <h2>More {type}s</h2>
               {sidemenuMeta
-                .filter(meta => meta.type === type)
-                .map(meta => (
+                .filter((meta) => meta.type === type)
+                .map((meta) => (
                   <PostLink handle={meta.handle} key={meta.handle}>
                     {meta.title}
                   </PostLink>
@@ -30,7 +30,16 @@ function Post({ content, meta, sidemenuMeta }) {
             </div>
           ))}
         </aside>
-      </div>
+      </main>
+      <style jsx>
+        {`
+          main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 64px 16px 32px;
+          }
+        `}
+      </style>
     </Page>
   );
 }

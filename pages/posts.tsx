@@ -6,7 +6,7 @@ import { fetchMarkdownMeta } from "../src/utils/markdown";
 function Posts({ posts }) {
   return (
     <Page title="posts" description="a collection of posts tom has authored">
-      <div className="contentTeaserPanel">
+      <main>
         <h2>All posts</h2>
         <div className="contentTeasers">
           {posts.map((meta, i) => (
@@ -17,7 +17,16 @@ function Posts({ posts }) {
             />
           ))}
         </div>
-      </div>
+      </main>
+      <style jsx>
+        {`
+          main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 64px 16px 32px;
+          }
+        `}
+      </style>
     </Page>
   );
 }
