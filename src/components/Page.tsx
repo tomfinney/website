@@ -57,6 +57,7 @@ export default function Page({ children, title, description }: IProps) {
             font-size: 100%;
             font-family: Inter, sans-serif;
             line-height: 1.6;
+            background-color: #f5f5f5;
           }
 
           a {

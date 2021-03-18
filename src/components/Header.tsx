@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import {
   MdHome,
   MdDescription,
@@ -17,6 +18,8 @@ const links = [
 ];
 
 export default function Header() {
+  const router = useRouter();
+
   const [showNav, setShowNav] = useState(false);
 
   return (
@@ -36,14 +39,24 @@ export default function Header() {
               className={`nav ${showNav ? "nav--show" : ""}`}
               onClick={showNav ? () => setShowNav(false) : undefined}
             >
-              {links.map((link) => (
-                <Link key={link.to} href={link.to}>
-                  <a>
-                    <link.Icon />
-                    <span>{link.text}</span>
-                  </a>
-                </Link>
-              ))}
+              {links.map((link) => {
+                let active = false;
+
+                if (link.to === "/") {
+                  active = router.asPath === "/";
+                } else {
+                  active = router.asPath.includes(link.to);
+                }
+
+                return (
+                  <Link key={link.to} href={link.to}>
+                    <a className={`${active ? "active" : ""}`}>
+                      {/* <link.Icon className="icon" /> */}
+                      <span>{link.text}</span>
+                    </a>
+                  </Link>
+                );
+              })}
             </nav>
           </div>
         </div>
@@ -63,6 +76,26 @@ export default function Header() {
           h3 {
             margin: 0;
             font-weight: 400;
+          }
+
+          a {
+            color: #111111;
+            display: inline-block;
+            line-height: 1;
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-size: 0.85em;
+            transition: 0.3s;
+            border: 1px solid;
+            border-color: transparent;
+          }
+
+          .active {
+            border-color: #000000;
+          }
+
+          a + a {
+            margin-left: 24px;
           }
 
           .header::before {
@@ -91,18 +124,13 @@ export default function Header() {
             text-align: right;
           }
 
-          a,
-          h3 {
-            color: #111111;
-          }
-
-          @media (min-width: 1000px) {
+          @media (min-width: 900px) {
             .toggle {
               display: none;
             }
           }
 
-          @media (max-width: 999px) {
+          @media (max-width: 899px) {
             .toggle {
               position: relative;
               z-index: 3;
