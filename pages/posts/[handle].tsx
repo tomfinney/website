@@ -15,28 +15,29 @@ function Post({ content, meta, sidemenuMeta }) {
         <article className="articleText">
           {content && <Markdown content={content} />}
         </article>
-        <aside>
-          {types.map((type) => (
-            <div key={type} className="articleAside">
-              <h2>More {type}s</h2>
-              {sidemenuMeta
-                .filter((meta) => meta.type === type)
-                .map((meta) => (
-                  <PostLink handle={meta.handle} key={meta.handle}>
-                    {meta.title}
-                  </PostLink>
-                ))}
-              {sidemenuMeta.length < 1 && <p>Sorry, no other {type} :(</p>}
-            </div>
-          ))}
-        </aside>
+        {types.map((type) => (
+          <div key={type} className="articleAside">
+            <h2>More {type}s</h2>
+            {sidemenuMeta
+              .filter((meta) => meta.type === type)
+              .map((meta) => (
+                <PostLink handle={meta.handle} key={meta.handle}>
+                  {meta.title}
+                </PostLink>
+              ))}
+            {sidemenuMeta.length < 1 && <p>Sorry, no other {type} :(</p>}
+          </div>
+        ))}
       </main>
       <style jsx>
         {`
           main {
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
-            padding: 64px 16px 32px;
+            padding: 4em 1em 2em;
+          }
+          h1 {
+            margin: 0 0 0.5em;
           }
         `}
       </style>

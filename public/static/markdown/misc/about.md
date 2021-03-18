@@ -2,8 +2,6 @@
 title: About
 ---
 
-# About
-
 Hi. My name is Tom. I am a Javascript developer.
 
 I've been a developer for 4+ years now. My first experience with programming was creating a hacked Minecraft client in Java. I actually learnt something about programming with C# at school. I messed around with Python as well. I mainly used Python to crawl websites to get stats about tennis players.

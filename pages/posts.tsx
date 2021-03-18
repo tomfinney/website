@@ -7,23 +7,20 @@ function Posts({ posts }) {
   return (
     <Page title="posts" description="a collection of posts tom has authored">
       <main>
-        <h2>All posts</h2>
-        <div className="contentTeasers">
-          {posts.map((meta, i) => (
-            <ContentTeaser
-              key={meta.handle}
-              meta={meta}
-              initialY={100 + i * 20}
-            />
-          ))}
-        </div>
+        <h1>All posts</h1>
+        {posts.map((meta, i) => (
+          <ContentTeaser key={meta.handle} meta={meta} />
+        ))}
       </main>
       <style jsx>
         {`
           main {
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
-            padding: 64px 16px 32px;
+            padding: 4em 1em 2em;
+          }
+          h1 {
+            margin: 0 0 0.5em;
           }
         `}
       </style>

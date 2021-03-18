@@ -11,12 +11,10 @@ function Index({ posts }) {
     <Page>
       <div className="hero"></div>
       <main>
-        <h2>Recent posts</h2>
-        <div className="contentTeasers">
-          {posts.map((meta) => (
-            <ContentTeaser key={meta.handle} meta={meta} />
-          ))}
-        </div>
+        <h1>Recent posts</h1>
+        {posts.map((meta) => (
+          <ContentTeaser key={meta.handle} meta={meta} />
+        ))}
       </main>
       <style jsx>{`
         .hero {
@@ -28,9 +26,12 @@ function Index({ posts }) {
           opacity: 0.9;
         }
         main {
-          max-width: 800px;
+          max-width: 700px;
           margin: 0 auto;
-          padding: 32px 16px;
+          padding: 2em 1em 2em;
+        }
+        h1 {
+          margin: 0 0 0.5em;
         }
       `}</style>
     </Page>

@@ -1,11 +1,9 @@
 import React from "react";
 import { PostLink } from "./PostLink";
 
-export default function ContentTeaser({ meta, initialY = 100 }) {
+export default function ContentTeaser({ meta }) {
   return (
-    <div
-      className="contentTeaser"
-    >
+    <div className="teaser">
       <div className="contentTeaser__inner">
         <div className="contentTeaser__content">
           <div className="contentTeaser__title">
@@ -21,6 +19,23 @@ export default function ContentTeaser({ meta, initialY = 100 }) {
           </PostLink>
         </div>
       </div>
+      <style jsx>
+        {`
+          .teaser {
+            background-color: #ffffff;
+            padding: 1em;
+            border-radius: 0.5em;
+          }
+
+          h3 {
+            margin: 0 0 0.5em;
+          }
+
+          .teaser + .teaser {
+            margin-top: 1em;
+          }
+        `}
+      </style>
     </div>
   );
 }

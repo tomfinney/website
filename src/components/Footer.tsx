@@ -29,9 +29,9 @@ export default function Footer() {
             color: #ffffff;
           }
           .inner {
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
-            padding: 32px 16px;
+            padding: 2em 1em;
           }
         `}
       </style>

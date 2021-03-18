@@ -3,23 +3,27 @@ import Page from "../src/components/Page";
 import Markdown from "../src/components/Markdown";
 import { fetchAndProcessMarkdown } from "../src/utils/markdown";
 
-function About({ content }) {
+function About({ content, meta }) {
   return (
-    <Page title="about tom">
+    <Page title={meta.title}>
       <main>
-        <article className="articleText">
-          {content && <Markdown content={content} />}
-        </article>
-        <aside className="articleAside">
-          <br />
-        </aside>
+        <h1>{meta.title}</h1>
+        <article>{content && <Markdown content={content} />}</article>
       </main>
       <style jsx>
         {`
           main {
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
-            padding: 64px 16px 32px;
+            padding: 4em 1em 2em;
+          }
+          h1 {
+            margin: 0 0 0.5em;
+          }
+          article {
+            background-color: white;
+            padding: 1.5em;
+            border-radius: 0.5em;
           }
         `}
       </style>
@@ -28,11 +32,11 @@ function About({ content }) {
 }
 
 About.getInitialProps = async () => {
-  const { content } = await fetchAndProcessMarkdown(
+  const { content, meta } = await fetchAndProcessMarkdown(
     "/static/markdown/misc/about.md"
   );
 
-  return { content };
+  return { content, meta };
 };
 
 export default About;
