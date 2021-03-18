@@ -57,15 +57,17 @@ export default function Header() {
             width: 100%;
             height: 42px;
             z-index: 2;
+            border-bottom: 1px solid #ddd;
           }
 
-          .header h3 {
+          h3 {
             margin: 0;
+            font-weight: 400;
           }
 
           .header::before {
             content: "";
-            background-color: rgba(255, 255, 255, 0.6);
+            background-color: rgba(255, 255, 255, 0.7);
             position: absolute;
             top: 0;
             left: 0;
@@ -121,7 +123,7 @@ export default function Header() {
               pointer-events: none;
               opacity: 0;
               transition: 0.3s;
-              background: rgba(255, 255, 255, 0.8);
+              background: rgba(255, 255, 255, 0.7);
             }
             .nav--show {
               opacity: 1;

@@ -54,6 +54,7 @@ export default function Page({ children, title, description }: IProps) {
             background-color: $colorWhite;
             color: #111111;
             margin: 0;
+            font-size: 100%;
             font-family: Inter, sans-serif;
             line-height: 1.6;
           }

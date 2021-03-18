@@ -13,10 +13,11 @@ function Index({ posts }) {
         <div
           style={{
             backgroundImage: `url('/static/images/${image.src}')`,
-            height: 500,
+            height: 400,
             backgroundSize: "cover",
             backgroundPosition: "center",
             borderRadius: 2,
+            opacity: 0.9,
           }}
         />
       </div>
