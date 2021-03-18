@@ -1,7 +1,7 @@
 ---
-title: happy new year
+title: Happy new year
 date: "11-01-2020"
-summary: tom wishes u a happy new year 11 days into the new year
+summary: tom wishes YOU a happy new year 11 days into the new year
 handle: happy-new-year
 type: blog
 ---
@@ -10,4 +10,4 @@ type: blog
 
 ###### 11-01-2020
 
-happy new year 2 everyone out there. i have changed the website design a bit to be a bit cleaner - tom
+happy new year to everyone out there. i have changed the website design a bit to be a bit cleaner - tom
