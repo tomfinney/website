@@ -8,10 +8,6 @@ alt: Small screenshot of the Movie Searcher website
 type: project
 ---
 
-# Movie Seacher
-
-###### 01-28-2019
-
 [Check it out here](https://mobiesearcher-1binb0nz3.now.sh/)
 
 I heard about the [announcement of hooks at React Conf 2018](https://www.youtube.com/watch?v=V-QO-KO90iQ) and immediately wanted to try them out.

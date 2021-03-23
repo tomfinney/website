@@ -25,9 +25,9 @@ export default function Header() {
             </Link>
           </h3>
           <div className="header_links">
-            <div className="toggle" onClick={() => setShowNav(!showNav)}>
+            <button className="toggle" onClick={() => setShowNav(!showNav)}>
               {showNav ? <MdClose /> : <MdMenu />}
-            </div>
+            </button>
             <nav
               className={`nav ${showNav ? "nav--show" : ""}`}
               onClick={showNav ? () => setShowNav(false) : undefined}
@@ -44,7 +44,8 @@ export default function Header() {
                 return (
                   <Link key={link.to} href={link.to}>
                     <a className={`${active ? "active" : ""}`}>
-                      {/* <link.Icon className="icon" /> */}
+                      <link.Icon className="icon" />
+                      <div className="spacer" />
                       <span>{link.text}</span>
                     </a>
                   </Link>
@@ -68,27 +69,32 @@ export default function Header() {
 
           h3 {
             margin: 0;
-            font-weight: 400;
+            font-weight: 800;
           }
 
           a {
             color: #111111;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
             line-height: 1;
             padding: 4px 12px;
             border-radius: 40px;
             font-size: 0.85em;
-            transition: 0.3s;
+            transition: 0.3 ease-in-out;
             border: 1px solid;
             border-color: transparent;
+          }
+
+          .nav a {
+            background-color: #ffffff;
           }
 
           .active {
             border-color: #000000;
           }
 
-          a + a {
-            margin-left: 24px;
+          .spacer {
+            width: 4px;
           }
 
           .header::before {
@@ -106,7 +112,7 @@ export default function Header() {
           .header_inner {
             display: flex;
             align-items: center;
-            padding: 2px 16px;
+            padding: 0.125em 1em 0.125em 0.25em;
             position: relative;
             z-index: 2;
             height: 100%;
@@ -117,9 +123,23 @@ export default function Header() {
             text-align: right;
           }
 
+          .toggle {
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            border: 1px solid #000000;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+          }
+
           @media (min-width: 900px) {
             .toggle {
               display: none;
+            }
+            a + a {
+              margin-left: 24px;
             }
           }
 
@@ -127,6 +147,10 @@ export default function Header() {
             .toggle {
               position: relative;
               z-index: 3;
+            }
+
+            a + a {
+              margin-top: 12px;
             }
 
             .nav {
@@ -143,15 +167,12 @@ export default function Header() {
               z-index: 2;
               pointer-events: none;
               opacity: 0;
-              transition: 0.3s;
-              background: rgba(255, 255, 255, 0.7);
+              transition: 0.3 ease-in-out;
+              background: rgba(255, 255, 255, 0.8);
             }
             .nav--show {
               opacity: 1;
               pointer-events: all;
-            }
-            .nav a {
-              width: 100%;
             }
           }
         `}

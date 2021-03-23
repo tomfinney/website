@@ -13,12 +13,12 @@ export default function Footer() {
   return (
     <footer>
       <div className="inner">
-        <div className="footer__content">
-          <MdCopyright /> tomfinney.com {new Date().getFullYear()}
+        <div className="content">
+          <MdCopyright />
+          <div className="spacer" />
+          <span>tomfinney.com {new Date().getFullYear()}</span>
         </div>
-        <div className="footer__content">
-          <small onClick={handleClick}>Back up</small>
-        </div>
+        <button onClick={handleClick}>Back up</button>
       </div>
       <style jsx>
         {`
@@ -29,9 +29,19 @@ export default function Footer() {
             color: #ffffff;
           }
           .inner {
-            max-width: 700px;
-            margin: 0 auto;
             padding: 2em 1em;
+          }
+          .content {
+            display: flex;
+            align-items: center;
+          }
+          .spacer {
+            width: 0.25em;
+            height: 0.25em;
+          }
+          button {
+            background-color: transparent;
+            border: 0;
           }
         `}
       </style>

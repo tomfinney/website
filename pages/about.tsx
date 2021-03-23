@@ -13,7 +13,7 @@ function About({ content, meta }) {
       <style jsx>
         {`
           main {
-            max-width: 700px;
+            max-width: 600px;
             margin: 0 auto;
             padding: 4em 1em 2em;
           }
@@ -22,8 +22,16 @@ function About({ content, meta }) {
           }
           article {
             background-color: white;
-            padding: 1.5em;
+            padding: 1em;
             border-radius: 0.5em;
+          }
+
+          article :global(:first-child) {
+            margin-top: 0;
+          }
+
+          article :global(:last-child) {
+            margin-bottom: 0;
           }
         `}
       </style>

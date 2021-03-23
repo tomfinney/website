@@ -26,7 +26,7 @@ function Index({ posts }) {
           opacity: 0.9;
         }
         main {
-          max-width: 700px;
+          max-width: 600px;
           margin: 0 auto;
           padding: 2em 1em 2em;
         }

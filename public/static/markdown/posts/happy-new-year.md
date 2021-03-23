@@ -6,8 +6,4 @@ handle: happy-new-year
 type: blog
 ---
 
-# happy new year
-
-###### 11-01-2020
-
 happy new year to everyone out there. i have changed the website design a bit to be a bit cleaner - tom

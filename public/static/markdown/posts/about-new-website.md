@@ -8,10 +8,6 @@ alt: Small screenshot of my website
 type: project
 ---
 
-# About my new website
-
-###### 01-27-2019
-
 I wanted to build more stuff and have a space to showcase the stuff I will build. What better place to start than making a website.
 
 This website was built from the ground up using React with Parcel. I like Parcel because it takes away those initial barriers such that you can just focus on making something.

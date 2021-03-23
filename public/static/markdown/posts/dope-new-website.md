@@ -8,10 +8,6 @@ alt: Small screenshot of my website
 type: blog
 ---
 
-# New website (first website)
-
-###### 01-27-2019
-
 This is my new website and it's actually the first personal website I've built.
 
 It's written in React using Parcel as the bundler and most of the content is driven by markdown files.

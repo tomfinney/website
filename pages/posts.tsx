@@ -15,7 +15,7 @@ function Posts({ posts }) {
       <style jsx>
         {`
           main {
-            max-width: 700px;
+            max-width: 600px;
             margin: 0 auto;
             padding: 4em 1em 2em;
           }

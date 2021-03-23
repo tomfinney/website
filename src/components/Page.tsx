@@ -64,6 +64,15 @@ export default function Page({ children, title, description }: IProps) {
 
           img {
             max-width: 100%;
+            display: block;
+          }
+
+          svg {
+            display: block;
+          }
+
+          button {
+            cursor: pointer;
           }
         `}
       </style>
