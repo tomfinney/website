@@ -1,8 +1,7 @@
 {
   "version": 2,
-  "name": "toms website",
   "alias": ["tomfinney.com"],
-  "builds": [{ "src": "next.config.js", "use": "@now/next" }],
+  "builds": [{ "src": "next.config.js", "use": "@vercel/next" }],
   "build": {
     "env": {
       "HOST": "@website_prod_host"
