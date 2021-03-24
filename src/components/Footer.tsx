@@ -24,12 +24,14 @@ export default function Footer() {
         {`
           footer {
             background-color: #333333;
+            text-align: center;
           }
           footer * {
             color: #ffffff;
           }
           .inner {
             padding: 2em 1em;
+            display: inline-block;
           }
           .content {
             display: flex;

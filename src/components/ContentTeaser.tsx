@@ -25,7 +25,7 @@ export default function ContentTeaser({ meta }) {
           }
 
           .teaser + .teaser {
-            margin-top: 1em;
+            margin-top: 2em;
           }
 
           .title {
