@@ -3,11 +3,16 @@ import { posts } from "../constants/posts";
 import yaml from "js-yaml";
 
 function processMarkdown(text: string) {
-  const [meta, content] = text.split("---").filter(Boolean);
-  return {
-    meta: yaml.load(meta),
-    content
-  };
+  try {
+    const [meta, content] = text.split("---").filter(Boolean);
+    return {
+      meta: yaml.load(meta),
+      content
+    };
+  } catch (e) {
+    console.error("FAILED to parse markdown", text)
+    return { meta: {}, content: "" }
+  }
 }
 
 async function fetchMarkdown(path: string) {
