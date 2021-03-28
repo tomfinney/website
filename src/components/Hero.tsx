@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { images } from "../constants/images";
 
 export default function Hero() {
-  const image = images[Math.floor(Math.random() * images.length)];
+  const image = useMemo(() => {
+    return images[Math.floor(Math.random() * images.length)];
+  }, []);
 
   const [loaded, setLoaded] = useState(false);
 
@@ -47,15 +49,13 @@ export default function Hero() {
         <div
           className={`hero hero--main ${loaded ? "visible" : "hidden"}`}
           style={{
-            backgroundImage: loaded
-              ? ` url("${srcToPublicPath(image.src)}")`
-              : "",
+            backgroundImage: `url("${srcToPublicPath(image.src)}")`,
           }}
         ></div>
         <div
           className={`hero hero--thumb ${loaded ? "hidden" : "visible"}`}
           style={{
-            backgroundImage: ` url("${srcToPublicPath(image.thumb)}")`,
+            backgroundImage: `url("${srcToPublicPath(image.thumb)}")`,
           }}
         ></div>
       </div>
