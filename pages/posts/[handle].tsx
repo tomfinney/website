@@ -6,9 +6,14 @@ import {
   fetchMarkdownMeta,
 } from "../../src/utils/markdown";
 import { PostLink } from "../../src/components/PostLink";
+import ErrorPage from 'next/error'
 
 function Post({ content, meta, sidemenuMeta }) {
   const types = ["blog", "project"];
+
+  if (!content) {
+    return <ErrorPage statusCode={404} />
+  }
 
   return (
     <Page title={meta.title} description={meta.summary}>
@@ -26,8 +31,8 @@ function Post({ content, meta, sidemenuMeta }) {
               {sidemenuMeta
                 .filter((meta) => meta.type === type)
                 .map((meta) => (
-                  <React.Fragment>
-                    <PostLink handle={meta.handle} key={meta.handle}>
+                  <React.Fragment key={meta.handle}>
+                    <PostLink handle={meta.handle}>
                       {meta.title}
                     </PostLink>
                     <br />

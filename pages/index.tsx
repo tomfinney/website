@@ -29,6 +29,7 @@ function Index({ posts }) {
           max-width: 600px;
           margin: 0 auto;
           padding: 2em 1em 2em;
+          min-height: calc(100vh - 514px);
         }
         h1 {
           margin: 0 0 0.5em;

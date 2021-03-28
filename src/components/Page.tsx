@@ -49,13 +49,16 @@ export default function Page({ children, title, description }: IProps) {
           }
 
           body {
-            background-color: $colorWhite;
             color: #111111;
             margin: 0;
             font-size: 100%;
             font-family: Inter, sans-serif;
             line-height: 1.6;
             background-color: #f5f5f5;
+          }
+
+          main {
+            min-height: calc(100vh - 114px);
           }
 
           a {

@@ -1,5 +1,5 @@
 ---
-title: Movie Searcher
+title: Movie searcher
 date: "01-28-2019"
 summary: Simple website for quick movie searches using hooks.
 handle: movie-searcher

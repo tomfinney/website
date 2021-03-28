@@ -25,11 +25,9 @@ function About({ content, meta }) {
             padding: 1em;
             border-radius: 0.5em;
           }
-
           article :global(:first-child) {
             margin-top: 0;
           }
-
           article :global(:last-child) {
             margin-bottom: 0;
           }
