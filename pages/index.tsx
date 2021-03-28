@@ -2,14 +2,12 @@ import React from "react";
 import Page from "../src/components/Page";
 import ContentTeaser from "../src/components/ContentTeaser";
 import { fetchMarkdownMeta } from "../src/utils/markdown";
-import { images } from "../src/constants/images";
+import Hero from "../src/components/Hero";
 
 function Index({ posts }) {
-  const image = images[Math.floor(Math.random() * images.length)];
-
   return (
     <Page>
-      <div className="hero"></div>
+      <Hero />
       <main>
         <h1>Recent posts</h1>
         {posts.map((meta) => (
@@ -17,14 +15,6 @@ function Index({ posts }) {
         ))}
       </main>
       <style jsx>{`
-        .hero {
-          background-image: url("/static/images/${image.src}");
-          height: 400px;
-          background-size: cover;
-          background-position: center;
-          border-radius: 2;
-          opacity: 0.9;
-        }
         main {
           max-width: 600px;
           margin: 0 auto;

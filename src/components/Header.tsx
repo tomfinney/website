@@ -63,7 +63,7 @@ export default function Header() {
             left: 0;
             width: 100%;
             height: 42px;
-            z-index: 2;
+            z-index: 20;
             border-bottom: 1px solid #ddd;
           }
 
