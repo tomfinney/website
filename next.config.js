@@ -2,6 +2,6 @@ require("dotenv").config();
 
 module.exports = {
   env: {
-    HOST: process.env.HOST
+    SERVER_URL: process.env.SERVER_URL
   }
 };
