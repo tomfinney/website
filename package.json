@@ -1,7 +1,6 @@
 {
   "name": "WEBSITE",
   "version": "2.0.0",
-  "author": "tom.finney@cd2solutions.co.uk <tom.finney@cd2solutions.co.uk>",
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
@@ -9,7 +8,7 @@
     "start": "next start"
   },
   "engines": {
-    "node": "^10 || ^12"
+    "node": "12.x.x"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
