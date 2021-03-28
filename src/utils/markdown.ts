@@ -2,7 +2,7 @@ import { fetch } from "./fetch";
 import { posts } from "../constants/posts";
 import yaml from "js-yaml";
 
-export function processMarkdown(text: string) {
+function processMarkdown(text: string) {
   const [meta, content] = text.split("---").filter(Boolean);
   return {
     meta: yaml.load(meta),
@@ -10,8 +10,9 @@ export function processMarkdown(text: string) {
   };
 }
 
-export function fetchMarkdown(path: string) {
-  return fetch(path).then(response => response.text().then(text => text));
+async function fetchMarkdown(path: string) {
+  const response = await fetch(path)
+  return await response.text()
 }
 
 export async function fetchAndProcessMarkdown(path: string) {
